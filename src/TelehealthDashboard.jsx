@@ -1,87 +1,15 @@
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Area, AreaChart } from 'recharts';
 import { TrendingUp, Users, MapPin, Target, ChevronRight, Activity, Heart, Building, Zap, ArrowRight, CheckCircle, Clock, DollarSign, Brain, AlertTriangle, Sparkles, Globe, Bot } from 'lucide-react';
-
-// Updated data based on January 2026 research
-const ageData = [
-  { age: '0-9', adoption: 4.0, fill: '#94a3b8' },
-  { age: '10-18', adoption: 11.3, fill: '#64748b' },
-  { age: '19-30', adoption: 24.0, fill: '#0ea5e9' },
-  { age: '31-40', adoption: 23.2, fill: '#0284c7' },
-  { age: '41-50', adoption: 16.6, fill: '#0369a1' },
-  { age: '51-64', adoption: 10.0, fill: '#075985' },
-  { age: '65+', adoption: 5.7, fill: '#0c4a6e' },
-];
-
-const geoData = [
-  { name: 'Urban', value: 14.6, color: '#0ea5e9' },
-  { name: 'Suburban', value: 12.5, color: '#38bdf8' },
-  { name: 'Rural', value: 7.4, color: '#7dd3fc' },
-];
-
-const serviceMix = [
-  { name: 'Behavioral Health', value: 67, color: '#6366f1' },
-  { name: 'Primary Care', value: 18, color: '#0ea5e9' },
-  { name: 'Specialty Care', value: 10, color: '#10b981' },
-  { name: 'Other', value: 5, color: '#94a3b8' },
-];
-
-const telementalHealthByAge = [
-  { age: '18-44', rate: 31.7, fill: '#6366f1', insight: 'Highest adoption' },
-  { age: '45-64', rate: 24.2, fill: '#8b5cf6', insight: 'Moderate adoption' },
-  { age: '65+', rate: 19.4, fill: '#a78bfa', insight: 'Lowest adoption' },
-];
-
-// Updated payment parity data - 29 states WITH parity (Jan 2026)
-const stateParityData = {
-  'Alabama': false, 'Alaska': false, 'Arizona': true, 'Arkansas': true,
-  'California': true, 'Colorado': true, 'Connecticut': true, 'Delaware': true,
-  'Florida': false, 'Georgia': true, 'Hawaii': true, 'Idaho': false,
-  'Illinois': true, 'Indiana': false, 'Iowa': false, 'Kansas': false,
-  'Kentucky': true, 'Louisiana': false, 'Maine': false, 'Maryland': true,
-  'Massachusetts': true, 'Michigan': false, 'Minnesota': true, 'Mississippi': false,
-  'Missouri': true, 'Montana': false, 'Nebraska': true, 'Nevada': true,
-  'New Hampshire': true, 'New Jersey': true, 'New Mexico': true, 'New York': true,
-  'North Carolina': false, 'North Dakota': false, 'Ohio': false, 'Oklahoma': true,
-  'Oregon': true, 'Pennsylvania': false, 'Rhode Island': true, 'South Carolina': false,
-  'South Dakota': false, 'Tennessee': false, 'Texas': false, 'Utah': true,
-  'Vermont': true, 'Virginia': true, 'Washington': true, 'West Virginia': true,
-  'Wisconsin': false, 'Wyoming': false
-};
-
-const parityStates = Object.entries(stateParityData).filter(([_, v]) => v).map(([k]) => k);
-const noParityStates = Object.entries(stateParityData).filter(([_, v]) => !v).map(([k]) => k);
-
-// AI Visit Deflection Data
-const deflectionData = [
-  { type: 'Low Acuity', volume: '35-40%', deflection: '30-40%', visits: '3-5', color: '#ef4444' },
-  { type: 'Medium Acuity', volume: '40-45%', deflection: '10-15%', visits: '1-2', color: '#f59e0b' },
-  { type: 'Higher Acuity', volume: '15-20%', deflection: '<5%', visits: '<1', color: '#10b981' },
-];
-
-// Big Tech Timeline Data
-const bigTechTimeline = [
-  { date: 'Jan 7, 2026', company: 'OpenAI', product: 'ChatGPT Health', color: '#10b981' },
-  { date: 'Jan 11, 2026', company: 'Anthropic', product: 'Claude for Healthcare', color: '#f59e0b' },
-  { date: 'Jan 21, 2026', company: 'Amazon', product: 'Health AI', color: '#0ea5e9' },
-];
-
-// Market Growth Projections
-const marketProjections = [
-  { year: '2024', urgentCare: 34.34, telehealth: 74.8 },
-  { year: '2025', urgentCare: 37.3, telehealth: 91.5 },
-  { year: '2026', urgentCare: 40.5, telehealth: 112.0 },
-  { year: '2028', urgentCare: 47.8, telehealth: 168.0 },
-  { year: '2030', urgentCare: 55.07, telehealth: 252.0 },
-];
-
-// Generational Volume Impact
-const genVolumeImpact = [
-  { factor: 'Digital scheduling', impact: '+25-35%', audience: 'Under 40' },
-  { factor: 'Telehealth option', impact: '+15-20%', audience: 'Gen Z/Millennials' },
-  { factor: 'Price transparency', impact: '+20-30%', audience: 'Digital search' },
-  { factor: 'Strong reviews (4.5+)', impact: '+40-50%', audience: 'Gen Z' },
-];
+import {
+  dashboardMeta, keyMetrics as keyMetricsData, overviewHighlights,
+  strategicPillars as strategicPillarsData,
+  ageData, geoData, serviceMix, telementalHealthByAge, marketProjections,
+  stateParityData, parityStates, noParityStates, parityCount,
+  deflectionData, deflectionStats, bigTechTimeline, bigTechStats,
+  genVolumeImpact, operationsData, demographicStats, patientInsights,
+  consumerCostData, reimbursementData, geographyProjections, strategicAlert,
+} from './data.js';
 
 export default function TelehealthDashboard() {
   const [activeSection, setActiveSection] = useState('overview');
@@ -98,19 +26,9 @@ export default function TelehealthDashboard() {
     { id: 'strategy', label: 'Growth Strategy', icon: Target },
   ];
 
-  const keyMetrics = [
-    { label: 'Global Telehealth', value: '$196.8B', subtext: '2025 market size', trend: '→ $1.37T by 2035', color: '#0ea5e9' },
-    { label: 'U.S. Urgent Care', value: '$34.3B', subtext: '2024 revenue', trend: '8.6% CAGR', color: '#10b981' },
-    { label: 'ChatGPT Health Users', value: '230M+', subtext: 'weekly health queries', trend: '40M+ daily', color: '#8b5cf6' },
-    { label: 'AI Visit Deflection', value: '15-25%', subtext: 'low-acuity by 2028', trend: '4-8 visits/day', color: '#f59e0b' },
-  ];
-
-  const strategicPillars = [
-    { title: 'AI-Enabled Patient Engagement', description: 'Deploy AI chatbots, ambient scribes, and smart triage to meet patients in digital channels', metrics: ['30-40% FAQ automation', '50-70% doc time savings'], icon: Brain },
-    { title: 'Hybrid Care Delivery', description: 'Seamlessly blend virtual and in-person care with warm handoffs and remote diagnostics', metrics: ['24/7 virtual access', '94-99% satisfaction'], icon: Zap },
-    { title: 'Consumer Experience Excellence', description: 'Price transparency, digital scheduling, minimal wait times to match retail expectations', metrics: ['+72% bookings for hybrid', '43% book after hours'], icon: Heart },
-    { title: 'Gen Z/Millennial Capture', description: 'Target digital natives with the experiences they expect—text-first, transparent, fast', metrics: ['3x more likely to choose UC', '$165B spending by 2030'], icon: TrendingUp },
-  ];
+  const iconMap = { Brain, Zap, Heart, TrendingUp };
+  const keyMetrics = keyMetricsData;
+  const strategicPillars = strategicPillarsData.map(p => ({ ...p, icon: iconMap[p.iconName] || Brain }));
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white p-6">
@@ -126,7 +44,7 @@ export default function TelehealthDashboard() {
           <div className="flex items-center gap-4">
             <div className="text-right">
               <p className="text-xs text-slate-500 uppercase">Data Current</p>
-              <p className="text-sm text-slate-300 font-mono">January 2026</p>
+              <p className="text-sm text-slate-300 font-mono">{dashboardMeta.lastUpdated}</p>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-500/20 to-sky-500/20 border border-violet-500/30">
               <Sparkles size={14} className="text-violet-400" />
