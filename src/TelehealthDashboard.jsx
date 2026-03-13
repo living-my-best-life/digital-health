@@ -536,12 +536,7 @@ export default function TelehealthDashboard() {
                   <p className="text-lg text-slate-300 mt-2">Patient Satisfaction</p>
                   <p className="text-sm text-slate-500 mt-3">Consistently high rates for virtual urgent care</p>
                 </div>
-                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 border-t-4 border-t-sky-500">
-                  <p className="text-4xl font-bold text-sky-400">$32</p>
-                  <p className="text-lg text-slate-300 mt-2">Fuel Cost Savings</p>
-                  <p className="text-sm text-slate-500 mt-3">Average fuel costs avoided per virtual visit</p>
-                </div>
-                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 border-t-4 border-t-indigo-500">
+<div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 border-t-4 border-t-indigo-500">
                   <p className="text-4xl font-bold text-indigo-400">$75-150</p>
                   <p className="text-lg text-slate-300 mt-2">Family Expense Savings</p>
                   <p className="text-sm text-slate-500 mt-3">Avoided childcare & other expenses</p>
