@@ -134,7 +134,8 @@ export default function TelehealthDashboard() {
                   </div>
                   <p className="text-3xl font-bold text-white">25-30%</p>
                   <p className="text-sm text-slate-400">of visits by 2026</p>
-                  <p className="text-xs text-slate-500 mt-3"><span className="text-sky-400 font-semibold">21-24% CAGR</span> growth rate</p>
+                  <p className="text-xs text-slate-500 mt-2">Includes growing self-pay segment</p>
+                  <p className="text-xs text-slate-500 mt-1"><span className="text-sky-400 font-semibold">21-24% CAGR</span> growth rate</p>
                 </div>
               </div>
 
@@ -162,7 +163,8 @@ export default function TelehealthDashboard() {
                 </div>
 
                 <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">Telehealth Service Mix (2025)</h3>
+                  <h3 className="text-lg font-semibold text-white mb-1">Telehealth Service Mix (2025)</h3>
+                  <p className="text-xs text-slate-500 mb-3">Commercial payer mix only — excludes Medicare, Medicaid, and self-pay</p>
                   <ResponsiveContainer width="100%" height={200}>
                     <PieChart>
                       <Pie data={serviceMix} cx="50%" cy="50%" innerRadius={50} outerRadius={80} paddingAngle={4} dataKey="value">
