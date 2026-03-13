@@ -70,13 +70,33 @@ export const geoData = [
   { name: 'Rural', value: 7.4, color: '#7dd3fc' },
 ];
 
-// Telehealth service mix (%)
+// Telehealth service mix — commercial claims only (FAIR Health)
 export const serviceMix = [
   { name: 'Behavioral Health', value: 67, color: '#6366f1' },
   { name: 'Primary Care', value: 18, color: '#0ea5e9' },
   { name: 'Specialty Care', value: 10, color: '#10b981' },
   { name: 'Other', value: 5, color: '#94a3b8' },
 ];
+
+// Estimated full-market telehealth mix (incl. Medicare, Medicaid, self-pay)
+// Sources: HHS ASPE, CMS, Grand View Research, McKinsey CHI 2024
+export const fullMarketMix = [
+  { name: 'Behavioral Health', value: 40, color: '#6366f1' },
+  { name: 'Primary Care', value: 30, color: '#0ea5e9' },
+  { name: 'Urgent/Low-Acuity', value: 15, color: '#f59e0b' },
+  { name: 'Specialty Care', value: 10, color: '#10b981' },
+  { name: 'Self-Pay/DTC', value: 5, color: '#f43f5e' },
+];
+
+// DTC / Self-Pay telehealth market
+export const dtcTelehealth = {
+  marketSize: '$1.5B',
+  cagr: '30.3%',
+  projectedBy2030: '$9.5B',
+  keyPlayers: ['Amazon One Medical', 'Sesame/Costco', 'Teladoc'],
+  visitPriceRange: '$29-75',
+  primaryUseCase: 'Low-acuity (URI, UTI, rash, allergies)',
+};
 
 // Telemental health by age group (%)
 export const telementalHealthByAge = [

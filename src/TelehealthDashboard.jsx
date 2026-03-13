@@ -4,7 +4,7 @@ import { TrendingUp, Users, MapPin, Target, ChevronRight, Activity, Heart, Build
 import {
   dashboardMeta, keyMetrics as keyMetricsData, overviewHighlights,
   strategicPillars as strategicPillarsData,
-  ageData, geoData, serviceMix, telementalHealthByAge, marketProjections,
+  ageData, geoData, serviceMix, fullMarketMix, dtcTelehealth, telementalHealthByAge, marketProjections,
   stateParityData, parityStates, noParityStates, parityCount,
   deflectionData, deflectionStats, bigTechTimeline, bigTechStats,
   genVolumeImpact, operationsData, demographicStats, patientInsights,
@@ -108,7 +108,7 @@ export default function TelehealthDashboard() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 <div className="p-5 rounded-xl bg-violet-500/10 border border-violet-500/30">
                   <div className="flex items-center gap-2 mb-3">
                     <Brain size={16} className="text-violet-400" />
@@ -137,6 +137,16 @@ export default function TelehealthDashboard() {
                   <p className="text-xs text-slate-500 mt-2">Includes growing self-pay segment</p>
                   <p className="text-xs text-slate-500 mt-1"><span className="text-sky-400 font-semibold">21-24% CAGR</span> growth rate</p>
                 </div>
+                <div className="p-5 rounded-xl bg-rose-500/10 border border-rose-500/30">
+                  <div className="flex items-center gap-2 mb-3">
+                    <DollarSign size={16} className="text-rose-400" />
+                    <span className="text-xs text-rose-400 uppercase font-medium">DTC / Self-Pay</span>
+                  </div>
+                  <p className="text-3xl font-bold text-white">{dtcTelehealth.marketSize}</p>
+                  <p className="text-sm text-slate-400">cash-pay market (2023)</p>
+                  <p className="text-xs text-slate-500 mt-2"><span className="text-rose-400 font-semibold">{dtcTelehealth.cagr} CAGR</span> → {dtcTelehealth.projectedBy2030} by 2030</p>
+                  <p className="text-xs text-slate-500 mt-1">Mostly low-acuity at {dtcTelehealth.visitPriceRange}/visit</p>
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
@@ -164,20 +174,38 @@ export default function TelehealthDashboard() {
 
                 <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
                   <h3 className="text-lg font-semibold text-white mb-1">Telehealth Service Mix (2025)</h3>
-                  <p className="text-xs text-slate-500 mb-3">Commercial payer mix only — excludes Medicare, Medicaid, and self-pay</p>
-                  <ResponsiveContainer width="100%" height={200}>
-                    <PieChart>
-                      <Pie data={serviceMix} cx="50%" cy="50%" innerRadius={50} outerRadius={80} paddingAngle={4} dataKey="value">
-                        {serviceMix.map((entry, index) => (<Cell key={`cell-${index}`} fill={entry.color} />))}
-                      </Pie>
-                      <Tooltip contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }} />
-                    </PieChart>
-                  </ResponsiveContainer>
-                  <div className="flex flex-wrap gap-3 mt-4 justify-center">
-                    {serviceMix.map((item, i) => (
-                      <span key={i} className="flex items-center gap-2 text-xs text-slate-400">
+                  <p className="text-xs text-slate-500 mb-4">Commercial claims vs. estimated full market including all payer types</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-xs text-center text-slate-400 mb-2 font-medium">Commercial Claims Only</p>
+                      <ResponsiveContainer width="100%" height={140}>
+                        <PieChart>
+                          <Pie data={serviceMix} cx="50%" cy="50%" innerRadius={30} outerRadius={55} paddingAngle={3} dataKey="value">
+                            {serviceMix.map((entry, index) => (<Cell key={`cell-cm-${index}`} fill={entry.color} />))}
+                          </Pie>
+                          <Tooltip contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }} />
+                        </PieChart>
+                      </ResponsiveContainer>
+                      <p className="text-xs text-center text-slate-600 mt-1">Source: FAIR Health</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-center text-slate-400 mb-2 font-medium">Est. Full Market</p>
+                      <ResponsiveContainer width="100%" height={140}>
+                        <PieChart>
+                          <Pie data={fullMarketMix} cx="50%" cy="50%" innerRadius={30} outerRadius={55} paddingAngle={3} dataKey="value">
+                            {fullMarketMix.map((entry, index) => (<Cell key={`cell-fm-${index}`} fill={entry.color} />))}
+                          </Pie>
+                          <Tooltip contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '8px' }} />
+                        </PieChart>
+                      </ResponsiveContainer>
+                      <p className="text-xs text-center text-slate-600 mt-1">Sources: HHS, CMS, Grand View</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-x-3 gap-y-1 mt-4 justify-center">
+                    {fullMarketMix.map((item, i) => (
+                      <span key={i} className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-2 h-2 rounded-full" style={{ background: item.color }} />
-                        {item.name} ({item.value}%)
+                        {item.name}
                       </span>
                     ))}
                   </div>
