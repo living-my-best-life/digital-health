@@ -9,7 +9,7 @@ import {
   deflectionData, deflectionStats, bigTechTimeline, bigTechStats,
   genVolumeImpact, operationsData, demographicStats, patientInsights,
   consumerCostData, reimbursementData, geographyProjections, strategicAlert,
-  emrCompetitive,
+  emrCompetitive, onDemandCare,
 } from './data.js';
 
 export default function TelehealthDashboard() {
@@ -19,6 +19,7 @@ export default function TelehealthDashboard() {
     { id: 'overview', label: 'Market Overview', icon: Activity },
     { id: 'bigtech', label: 'Big Tech & AI', icon: Brain },
     { id: 'emr', label: 'EMR Landscape', icon: Building },
+    { id: 'ondemand', label: 'On-Demand Care', icon: Zap },
     { id: 'deflection', label: 'AI Deflection', icon: Bot },
     { id: 'operations', label: 'Operations', icon: Clock },
     { id: 'demographics', label: 'Demographics', icon: Users },
@@ -221,12 +222,12 @@ export default function TelehealthDashboard() {
             <div className="space-y-6 animate-in fade-in duration-300">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-2">Big Tech's Healthcare Offensive</h2>
-                <p className="text-slate-400">January 2026 marked a watershed moment. OpenAI, Anthropic, and Amazon each launched comprehensive healthcare AI platforms within two weeks.</p>
+                <p className="text-slate-400">January 2026 marked the watershed: OpenAI, Anthropic, and Amazon launched healthcare AI platforms within two weeks. Since then Microsoft went agentic (100K+ clinicians), OpenAI shipped ChatGPT for Clinicians, and Google turned Fitbit into an AI health coach.</p>
               </div>
 
               {/* Timeline */}
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-white mb-4">January 2026 Launch Timeline</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">2026 Launch Timeline</h3>
                 <div className="relative">
                   <div className="absolute left-8 top-0 bottom-0 w-px bg-slate-700" />
                   <div className="space-y-6">
@@ -371,9 +372,9 @@ export default function TelehealthDashboard() {
                   <p className="text-xs text-slate-500 mt-2">ChatGPT alone</p>
                 </div>
                 <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
-                  <p className="text-4xl font-bold text-emerald-400">800M</p>
-                  <p className="text-sm text-slate-400 mt-1">Total ChatGPT users</p>
-                  <p className="text-xs text-slate-500 mt-2">1 in 4 ask health Qs</p>
+                  <p className="text-4xl font-bold text-emerald-400">900M</p>
+                  <p className="text-sm text-slate-400 mt-1">Weekly ChatGPT users</p>
+                  <p className="text-xs text-slate-500 mt-2">1B monthly · 1 in 4 ask health Qs</p>
                 </div>
                 <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
                   <p className="text-4xl font-bold text-amber-400">66%</p>
@@ -1060,6 +1061,68 @@ export default function TelehealthDashboard() {
                     <div key={i} className="flex items-start gap-3">
                       <ChevronRight size={16} className="text-violet-400 mt-0.5 flex-shrink-0" />
                       <p className="text-sm text-slate-300">{signal}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ON-DEMAND CARE ECONOMY SECTION */}
+          {activeSection === 'ondemand' && (
+            <div className="space-y-6 animate-in fade-in duration-300">
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-2">On-Demand Care Economy</h2>
+                <p className="text-slate-400">Where care is moving on-demand and cash-pay: GLP-1s, virtual primary care, wellness &amp; longevity, at-home diagnostics, and pharmacy test-to-treat. Updated {onDemandCare.asOf}.</p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {onDemandCare.blocks.map((block, i) => (
+                  <div key={i} className={`bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 hover:border-slate-600 transition-all ${i === onDemandCare.blocks.length - 1 && onDemandCare.blocks.length % 2 === 1 ? 'col-span-2' : ''}`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="text-lg font-semibold text-white">{block.title}</h4>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        block.posture === 'Threat' ? 'bg-rose-500/20 text-rose-400'
+                        : block.posture === 'Opportunity' ? 'bg-emerald-500/20 text-emerald-400'
+                        : 'bg-amber-500/20 text-amber-400'
+                      }`}>{block.posture}</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 mb-4">
+                      {block.stats.map((stat, j) => (
+                        <div key={j} className="p-3 rounded-lg bg-slate-800/50 text-center">
+                          <p className="text-lg font-bold font-mono" style={{ color: block.color }}>{stat.value}</p>
+                          <p className="text-xs text-slate-500 mt-1">{stat.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="space-y-2">
+                      {block.developments.map((dev, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm">
+                          <span className="text-xs text-slate-500 font-mono whitespace-nowrap mt-0.5">{dev.date}</span>
+                          <span className="text-slate-300">{dev.headline}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {block.strategicNote && (
+                      <div className="mt-3 pt-3 border-t border-slate-700 flex items-start gap-2">
+                        <Target size={12} className="text-amber-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-xs text-slate-400">{block.strategicNote}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-gradient-to-r from-violet-500/10 to-sky-500/10 border border-violet-500/20 rounded-xl p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkles size={16} className="text-violet-400" />
+                  <h3 className="text-lg font-semibold text-white">What It Means for Urgent Care</h3>
+                </div>
+                <div className="space-y-3">
+                  {onDemandCare.takeaways.map((takeaway, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <ChevronRight size={16} className="text-violet-400 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-slate-300">{takeaway}</p>
                     </div>
                   ))}
                 </div>

@@ -15,7 +15,7 @@
 // ============================================================
 export const dashboardMeta = {
   lastUpdated: 'July 2026',
-  updateLabel: 'EMR Competitive Landscape Update',
+  updateLabel: 'Big Tech + EMR + On-Demand Care Update',
   subtitle: 'AI, Telehealth & Big Tech Market Analysis | Urgent Care Executive Insights',
 };
 
@@ -25,7 +25,7 @@ export const dashboardMeta = {
 export const keyMetrics = [
   { label: 'Global Telehealth', value: '$219B', subtext: '2026 market size', trend: '→ $1.37T by 2035', color: '#0ea5e9' },
   { label: 'U.S. Urgent Care', value: '$44.3B', subtext: '2026 projected revenue', trend: '8.6% CAGR', color: '#10b981' },
-  { label: 'ChatGPT Health Users', value: '250M+', subtext: 'weekly health queries (est.)', trend: '40M+ daily', color: '#8b5cf6' },
+  { label: 'ChatGPT Health Users', value: '230M+', subtext: 'weekly health queries', trend: '40M+ daily', color: '#8b5cf6' },
   { label: 'AI Visit Deflection', value: '15-25%', subtext: 'low-acuity by 2028', trend: '4-8 visits/day', color: '#f59e0b' },
 ];
 
@@ -162,24 +162,32 @@ export const bigTechTimeline = [
   { date: 'Jan 7, 2026', company: 'OpenAI', product: 'ChatGPT Health', color: '#10b981' },
   { date: 'Jan 11, 2026', company: 'Anthropic', product: 'Claude for Healthcare', color: '#f59e0b' },
   { date: 'Jan 21, 2026', company: 'Amazon', product: 'Health AI (One Medical)', color: '#0ea5e9' },
+  { date: 'Mar 5, 2026', company: 'Microsoft', product: 'Dragon Copilot Goes Agentic — 100K+ Clinicians, 9 Countries', color: '#6366f1' },
   { date: 'Mar 10, 2026', company: 'Amazon', product: 'Health AI — All U.S. Customers', color: '#0ea5e9' },
-  { date: 'Mar 10, 2026', company: 'HIMSS 2026', product: 'Agentic AI Wave — Epic, Microsoft, Google', color: '#6366f1' },
+  { date: 'Apr 2026', company: 'OpenAI', product: 'ChatGPT for Clinicians — Free for Verified Providers', color: '#10b981' },
+  { date: 'May 19, 2026', company: 'Google', product: 'Fitbit → Google Health + Gemini AI Health Coach ($9.99/mo)', color: '#ef4444' },
 ];
 
 export const bigTechStats = {
-  chatgptWeeklyUsers: '900M',        // WAU as of Feb 2026 (up from 800M)
-  chatgptWeeklyQueries: '250M+',     // est. from 900M WAU x 1-in-4 health ratio
+  chatgptWeeklyUsers: '900M',        // WAU (confirmed Feb + Jun 2026)
+  chatgptMonthlyUsers: '1B',         // MAU by June 2026
+  chatgptWeeklyQueries: '230M+',     // OpenAI's own figure, still 230M as of Jul 2026 (was overstated as 250M)
   chatgptDailyPrompts: '40M+',
   chatgptHealthShare: '1 in 4',
   chatgptAfterHours: '7 in 10',
   chatgptInsuranceMsgs: '1.6-1.9M',
-  chatgptEnterpriseCustomers: '8+',  // AdventHealth, HCA, MSK, Stanford, UCSF, Baylor, Boston Children's, Cedars-Sinai
+  chatgptEnterpriseCustomers: '8',   // AdventHealth, HCA, MSK, Stanford Children's, UCSF, Baylor, Boston Children's, Cedars-Sinai — no net-new since Jan
+  chatgptCliniciansProduct: 'Apr 2026', // ChatGPT for Clinicians, free for verified providers
+  bwellProviders: '2.2M',            // b.well EHR aggregation backbone for ChatGPT Health
   amazonPrimeMembers: '200M+',
-  amazonVisitPrice: '$29-49',
-  amazonFreeConsults: '5',            // free provider consultations for Prime members
-  dragonCopilotSystems: '600+',      // health systems using Microsoft Dragon Copilot
-  dragonCopilotClinicians: '100K+',  // clinicians daily
-  epicAiAdoption: '85%',             // of Epic customers using AI
+  amazonVisitPrice: '$29',           // pay-per-visit telehealth ($49 in-person not re-confirmed in 2026 sources)
+  amazonFreeConsults: '5',           // free Prime consults, 30+ conditions, valued up to $145
+  amazonConsultValue: '$145',
+  dragonCopilotClinicians: '100K+',  // clinicians daily, 9 countries, 58 languages (HIMSS Mar 2026)
+  dragonCopilotCountries: 9,
+  googleHealthPremium: '$9.99/mo',   // Gemini AI Health Coach, May 19 2026
+  epicAiAdoption: '85%',             // of Epic customers using AI (HIMSS 2026)
+  epicArtMonthlyUses: '16M',         // Art documentation uses/month, ~3x growth
   aiUnderTriageRate: '52%',          // Mount Sinai study — emergency cases under-triaged
   aiTrustRate: '39%',                // Americans who trust AI chatbots for health decisions
   aiMonthlyUsage: '1 in 6',          // U.S. adults using AI chatbot monthly for health
@@ -223,7 +231,7 @@ export const demographicStats = {
 };
 
 export const patientInsights = {
-  weeklyHealthQueries: '250M+',     // est. from 900M WAU base
+  weeklyHealthQueries: '230M+',     // OpenAI figure, confirmed Jul 2026
   healthUserShare: '1 in 4',
   dailyPrompts: '40M+',
   afterHoursRate: '70%',
@@ -263,9 +271,9 @@ export const geographyProjections = {
 // STRATEGIC ALERT (sidebar)
 // ============================================================
 export const strategicAlert = {
-  text: 'Amazon opened Health AI to ALL U.S. customers on March 10.',
+  text: 'Gemini AI Health Coach launched May 19; Amazon Health AI open to all U.S. customers.',
   highlight: '900M weekly',
-  suffix: 'ChatGPT users — 250M+ ask health Qs.',
+  suffix: 'ChatGPT users — 230M+ health Qs/week.',
 };
 
 // ============================================================
@@ -304,6 +312,107 @@ export const mentalHealthTelehealth = {
   remoteShare: '52%',               // of mental health visits now remote
   springHealthAlmaValuation: '$6-7B',
   springHealthAlmaRevenue: '$1B',
+};
+
+// ============================================================
+// ON-DEMAND CARE ECONOMY (ODC-1..3 in tracker)
+// Five blocks: GLP-1/metabolic, virtual PCP, wellness/longevity,
+// at-home diagnostics, pharmacy test-to-treat. Updated by weekly
+// research → apply pipeline. posture: 'Threat' | 'Opportunity' | 'Mixed'
+// ============================================================
+export const onDemandCare = {
+  asOf: 'July 2026',
+  blocks: [
+    {
+      title: 'GLP-1 & Metabolic Care',
+      posture: 'Opportunity',
+      color: '#10b981',
+      stats: [
+        { label: 'US adults on a GLP-1', value: '1 in 8' },
+        { label: 'Wegovy cash price (NovoCare)', value: '$349/mo' },
+        { label: 'Compounded sema shipments YoY', value: '-90%' },
+      ],
+      developments: [
+        { date: 'Jul 2026', headline: 'Medicare GLP-1 Bridge live July 1 — $50/30-day copay for Wegovy/Zepbound through Dec 2027' },
+        { date: 'Q1 2026', headline: 'Hims & Hers: $608M revenue but $92M net loss pivoting off compounded GLP-1s; 125K+ Wegovy shipments in six weeks on branded access' },
+        { date: '2026', headline: 'Direct pricing settled: LillyDirect Zepbound vials $299-449; NovoCare Wegovy $349/mo ($199 intro); Walmart is first retail pickup for LillyDirect' },
+        { date: '2025', headline: 'FDA compounding enforcement held in court — the compounded GLP-1 era is over; 455+ adverse-event reports tied to compounded semaglutide (many dosing errors)' },
+      ],
+      strategicNote: 'Build a cash-pay metabolic visit line. Urgent care owns the in-person wrapper telehealth can’t provide: eligibility workup, injection teaching, GI side-effect management — and the walk-in catch for adverse events.',
+    },
+    {
+      title: 'Virtual & Hybrid Primary Care',
+      posture: 'Threat',
+      color: '#0ea5e9',
+      stats: [
+        { label: 'One Medical w/ Prime', value: '$99/yr' },
+        { label: 'Large employers with virtual PCP', value: '45%' },
+        { label: 'Direct primary care practices', value: '2,700+' },
+      ],
+      developments: [
+        { date: '2026', headline: 'Amazon One Medical: $29 messaging / $49 video pay-per-visit, now extended to pediatrics (ages 2-11)' },
+        { date: '2026', headline: 'Retail retreat continues: CVS closing 16 Oak Street centers, Walgreens exiting primary care — but Costco+Sesame counter with $29 virtual visits' },
+        { date: '2025-26', headline: 'Transcarent closed ~$621M Accolade acquisition; Teladoc-Livongo now worth ~$1B vs $37B at 2020 peak' },
+        { date: '2026', headline: '73% of large employers advancing "starts-online" primary care plan designs' },
+      ],
+      strategicNote: 'The virtual front door is resetting patient flow. Position urgent care as the escalation layer: referral partnerships, e-consult catch, and same-day physical care the virtual layer can’t deliver.',
+    },
+    {
+      title: 'Cash-Pay Wellness & Longevity',
+      posture: 'Opportunity',
+      color: '#8b5cf6',
+      stats: [
+        { label: 'IV hydration market (2025)', value: '$2.9B' },
+        { label: 'Function Health valuation', value: '$2.5B' },
+        { label: 'US med spas', value: '11,500+' },
+      ],
+      developments: [
+        { date: 'Jul 2026', headline: 'FDA advisory committee reviews 7 peptides (BPC-157, TB-500, MOTS-C) July 23-24 — regulatory gray zone unresolved' },
+        { date: 'Nov 2025', headline: 'Function Health: $298M Series B at $2.5B; acquired Ezra and cut full-body MRI base scan to $499' },
+        { date: '2025', headline: 'Prenuvo: 110K+ members, ~$100M revenue, profitable; longevity lab memberships (Superpower, Lifeforce) scaling' },
+        { date: 'Feb 2025', headline: 'FDA removed testosterone CV warnings — TRT/HRT telehealth tailwind (Hone Health $33M Series A)' },
+      ],
+      strategicNote: 'High-margin, insurance-light, membership-friendly services that fit walk-in real estate and clinical staffing — the clearest "own the ancillary" play. Stay out of the peptide gray zone until FDA resolves it.',
+    },
+    {
+      title: 'At-Home Diagnostics & Wearables',
+      posture: 'Mixed',
+      color: '#f59e0b',
+      stats: [
+        { label: 'Dexcom Stelo OTC CGM', value: '$89/mo' },
+        { label: 'DTC lab-testing market (2025)', value: '$3.8B' },
+        { label: 'Apple BP alerts', value: 'FDA-cleared' },
+      ],
+      developments: [
+        { date: 'Sep 2025', headline: 'Apple Watch Series 11: FDA-cleared hypertension notifications + sleep apnea detection now live across Series 9/10/11 and Ultra' },
+        { date: '2025-26', headline: 'OTC CGMs (Stelo $89/mo, Lingo $49+) shifting from wellness buyers toward prediabetes/Type 2 users' },
+        { date: '2026', headline: 'DTC lab testing headed from $3.8B to ~$8.2B by 2034; Everlywell, QuestDirect, Labcorp OnDemand lead' },
+      ],
+      strategicNote: 'Patients increasingly arrive pre-flagged by a device or a home test. Build device-alert follow-up visits (BP trend, apnea flag, CGM anomaly) into the intake funnel — it converts consumer diagnostics into clinic volume.',
+    },
+    {
+      title: 'Pharmacy Test-to-Treat',
+      posture: 'Threat',
+      color: '#f43f5e',
+      stats: [
+        { label: 'States w/ prescribe-on-result', value: '30 + DC' },
+        { label: 'Cost vs urgent care per episode', value: '-$122' },
+        { label: 'Would try pharmacy first', value: '58%' },
+      ],
+      developments: [
+        { date: 'Jul 2025', headline: '42 states + DC allow pharmacist point-of-care testing (flu, strep, UTI, COVID, RSV); 30 + DC allow prescribing on the result' },
+        { date: '2025-26', headline: 'CVS MinuteClinic test-to-treat $59-129 self-pay (~40% below urgent care); Walgreens from ~$45' },
+        { date: '2026', headline: 'Counter-signal: CVS/Walgreens/Rite Aid closing thousands of stores + pharmacist staffing shortage caps deflection capacity' },
+      ],
+      strategicNote: 'The low-acuity core (flu, strep, UTI) is structurally exposed — but pharmacy capacity is shrinking. Defend acute/after-hours, and become the referral catch for what pharmacists can’t close: higher acuity, imaging, procedures.',
+    },
+  ],
+  takeaways: [
+    'Pharmacy test-to-treat is the nearest-term deflection threat, but it’s self-limiting: authority is expanding while the store footprint and pharmacist workforce shrink. Defend the acute/after-hours niche and catch the escalations.',
+    'GLP-1s are a net ancillary-revenue opportunity, not just a threat. Telehealth prescribers are margin-squeezed on branded fulfillment; urgent care’s in-person wrapper (eligibility, injection teaching, side-effect management) is the differentiated piece. The Medicare GLP-1 Bridge (July 2026) expands the insured funnel.',
+    'The cash-pay wellness/longevity stack (IV hydration, TRT/HRT, CGM/lab follow-up) is the clearest high-margin, insurance-light growth vector that fits urgent care real estate — with peptides as the one regulatory landmine to avoid.',
+    'Virtual-first PCP and FDA-cleared wearable alerts reset the front door. More arrivals will be pre-triaged or device-flagged — integrate with the virtual funnel as its physical escalation layer instead of fighting it.',
+  ],
 };
 
 // ============================================================
