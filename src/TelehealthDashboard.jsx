@@ -9,6 +9,7 @@ import {
   deflectionData, deflectionStats, bigTechTimeline, bigTechStats,
   genVolumeImpact, operationsData, demographicStats, patientInsights,
   consumerCostData, reimbursementData, geographyProjections, strategicAlert,
+  emrCompetitive,
 } from './data.js';
 
 export default function TelehealthDashboard() {
@@ -17,6 +18,7 @@ export default function TelehealthDashboard() {
   const sections = [
     { id: 'overview', label: 'Market Overview', icon: Activity },
     { id: 'bigtech', label: 'Big Tech & AI', icon: Brain },
+    { id: 'emr', label: 'EMR Landscape', icon: Building },
     { id: 'deflection', label: 'AI Deflection', icon: Bot },
     { id: 'operations', label: 'Operations', icon: Clock },
     { id: 'demographics', label: 'Demographics', icon: Users },
@@ -1007,6 +1009,59 @@ export default function TelehealthDashboard() {
                     <p className="text-lg text-slate-400">Telehealth: <span className="text-sky-400 font-semibold">$252B</span></p>
                     <p className="text-sm text-emerald-400 mt-1">The window for action is 12-24 months</p>
                   </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* EMR COMPETITIVE LANDSCAPE SECTION */}
+          {activeSection === 'emr' && (
+            <div className="space-y-6 animate-in fade-in duration-300">
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-2">Ambulatory EMR Competitive Landscape</h2>
+                <p className="text-slate-400">Competitive intelligence across Epic, athenahealth, Oracle Health, eClinicalWorks, Tebra, NextGen, and other ambulatory EMR vendors. Updated {emrCompetitive.asOf}.</p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {emrCompetitive.vendors.map((vendor, i) => (
+                  <div key={i} className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 hover:border-slate-600 transition-all">
+                    <div className="flex items-center justify-between mb-1">
+                      <h4 className="text-lg font-semibold text-white">{vendor.name}</h4>
+                      {vendor.marketShare && (
+                        <span className="px-2 py-1 rounded-full bg-slate-700 text-xs font-mono" style={{ color: vendor.color }}>{vendor.marketShare}</span>
+                      )}
+                    </div>
+                    <p className="text-xs text-slate-500 uppercase mb-3">{vendor.segment}</p>
+                    <div className="space-y-2">
+                      {vendor.updates.map((update, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm">
+                          <span className="text-xs text-slate-500 font-mono whitespace-nowrap mt-0.5">{update.date}</span>
+                          <span className="text-slate-300">{update.headline}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {vendor.strategicNote && (
+                      <div className="mt-3 pt-3 border-t border-slate-700 flex items-start gap-2">
+                        <Target size={12} className="text-amber-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-xs text-slate-400">{vendor.strategicNote}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-gradient-to-r from-violet-500/10 to-sky-500/10 border border-violet-500/20 rounded-xl p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkles size={16} className="text-violet-400" />
+                  <h3 className="text-lg font-semibold text-white">Market Signals</h3>
+                </div>
+                <div className="space-y-3">
+                  {emrCompetitive.marketSignals.map((signal, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <ChevronRight size={16} className="text-violet-400 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-slate-300">{signal}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

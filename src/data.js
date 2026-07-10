@@ -14,8 +14,8 @@
 // META
 // ============================================================
 export const dashboardMeta = {
-  lastUpdated: 'March 2026',
-  updateLabel: 'HIMSS 2026 / Amazon Expansion Update',
+  lastUpdated: 'July 2026',
+  updateLabel: 'EMR Competitive Landscape Update',
   subtitle: 'AI, Telehealth & Big Tech Market Analysis | Urgent Care Executive Insights',
 };
 
@@ -304,6 +304,148 @@ export const mentalHealthTelehealth = {
   remoteShare: '52%',               // of mental health visits now remote
   springHealthAlmaValuation: '$6-7B',
   springHealthAlmaRevenue: '$1B',
+};
+
+// ============================================================
+// AMBULATORY EMR COMPETITIVE LANDSCAPE (EMR-1..3 in tracker)
+// Updated by weekly research → apply pipeline. Keep ≤4 updates per vendor.
+// ============================================================
+export const emrCompetitive = {
+  asOf: 'July 2026',
+  vendors: [
+    {
+      name: 'Epic',
+      segment: 'Enterprise + independent groups (Garden Plot, 40+ providers)',
+      marketShare: 'Best in KLAS 75+ MDs (tie)',
+      color: '#ef4444',
+      updates: [
+        { date: 'Mar 2026', headline: 'HIMSS26: "Agent Factory" no-code builder — health systems configure and deploy their own AI agents inside Epic' },
+        { date: 'Mar 2026', headline: 'Curiosity foundation models formalized — trained on ~300M patient records / ~16B medical events' },
+        { date: 'Mar 2026', headline: '>85% of Epic customers actively using Epic AI; 150+ AI features in development for 2026' },
+        { date: 'Aug 2025', headline: 'Toolbox stays open to third-party ambient vendors — Ambience native in Haiku/Hyperdrive' },
+      ],
+      strategicNote: 'Building its own agent stack AND renting best-of-breed scribes. Garden Plot floor is 40+ providers — leaves small urgent care unserved.',
+    },
+    {
+      name: 'athenahealth',
+      segment: 'Independent practice suites (athenaOne)',
+      marketShare: 'Best in KLAS 11-75 MDs',
+      color: '#0ea5e9',
+      updates: [
+        { date: 'Feb 2026', headline: 'athenaAmbient: FREE native ambient scribe in athenaOne — GA expected mid-to-late 2026, no extra cost' },
+        { date: 'Feb 2026', headline: 'Sage AI assistant reads the chart and answers clinical questions' },
+        { date: 'Feb 2026', headline: 'Won Best in KLAS independent physician practice suite third straight year; tied Epic at 75+ MDs' },
+        { date: 'Nov 2025', headline: '"AI-native clinical encounter" redesign is the umbrella for 2026 rollouts; Microsoft Dragon Copilot now available in athenaOne' },
+      ],
+      strategicNote: 'Making ambient documentation a free platform feature, not a paid add-on — collapses scribe pricing across the segment.',
+    },
+    {
+      name: 'Oracle Health (Cerner)',
+      segment: 'Enterprise — AI-native rebuild, acute + ambulatory',
+      marketShare: 'Wildcard',
+      color: '#f59e0b',
+      updates: [
+        { date: 'Mar 2026', headline: 'Acute-care functionality launched — AI-native EHR now spans acute + ambulatory' },
+        { date: 'Jan 2026', headline: 'Ambulatory AI features live for early adopters of the voice-first, agentic EHR' },
+        { date: '2026', headline: 'OpenAI-powered Oracle Patient Portal GA planned for CY2026' },
+        { date: '2026', headline: 'Reported ~320 facilities on new EHR; 78% of nurses rate interface intuitive (single-source — verify)' },
+      ],
+      strategicNote: 'Only legacy vendor rebuilding AI-native from the ground up rather than bolting AI onto old bones. Biggest structural swing factor over 6-12 months.',
+    },
+    {
+      name: 'eClinicalWorks',
+      segment: 'Ambulatory + community health centers',
+      marketShare: 'High-volume ambulatory',
+      color: '#10b981',
+      updates: [
+        { date: 'May 2026', headline: 'healowIQ launched — peer-reviewed evidence at point of care, grounded in EHR data' },
+        { date: 'May 2026', headline: 'Agentic AI ecosystem showcased at Health Center Summit' },
+        { date: '2026', headline: 'Sunoh.ai ambient scribe (EHR-agnostic): vendor reports 102.5% more appointments handled, 33.2% faster documentation' },
+      ],
+      strategicNote: 'Bundled ambient + agentic stack aimed at high-throughput ambulatory — direct overlap with urgent care workflows.',
+    },
+    {
+      name: 'Tebra',
+      segment: 'Small/independent practices (Kareo + PatientPop)',
+      marketShare: 'Small-practice leader',
+      color: '#8b5cf6',
+      updates: [
+        { date: 'Dec 2025', headline: '$250M raise (Hildred Capital + J.P. Morgan debt) explicitly to accelerate AI across EHR, billing, patient experience' },
+        { date: 'H2 2025', headline: 'AI Note Assist: >500K ambient notes, ~60% time savings per note (vendor-reported)' },
+        { date: '2025', headline: 'AI Review Replies + Review Insights — reputation management from PatientPop DNA' },
+      ],
+      strategicNote: 'Clearest small-practice AI play with fresh capital — the segment below Epic Garden Plot’s 40-provider floor. Natural competitor for very small urgent care.',
+    },
+    {
+      name: 'NextGen Healthcare',
+      segment: 'Ambulatory mid-market (Thoma Bravo-owned)',
+      marketShare: 'Quiet this window',
+      color: '#64748b',
+      updates: [
+        { date: '2026', headline: 'Ambient Assist remains one of four EHRs with native ambient AI documentation (with Epic, athena, Oracle) — sold as paid add-on' },
+        { date: '2026', headline: 'NextGen Office Ambient Assist small-practice variant + specialty tuning (ophthalmology/optometry)' },
+        { date: 'Mar-Jul 2026', headline: 'No fresh M&A, funding, or major product news surfaced this window' },
+      ],
+      strategicNote: 'Paid ambient add-on model is under pressure as athenahealth makes it free.',
+    },
+    {
+      name: 'Veradigm (Allscripts)',
+      segment: 'Ambulatory + payer/life-science data',
+      marketShare: 'Distressed',
+      color: '#f43f5e',
+      updates: [
+        { date: 'May 2026', headline: 'New CFO Christian Greyenbuhl effective May 11 (single-source)' },
+        { date: 'Feb 2026', headline: 'Released estimated FY2025 results; priorities: remediate internal controls, seek Nasdaq relisting in 2026' },
+        { date: '2026', headline: 'Native ambient scribe + ICD-10/order suggestions; ScienceIO monetizing ~200M patient records as de-identified data' },
+        { date: 'Watch', headline: 'Oracle reported as potential acquirer of Veradigm data assets — unresolved overhang' },
+      ],
+      strategicNote: 'Financially distracted and data-led rather than product-led. Its ambulatory install base is a churn target.',
+    },
+    {
+      name: 'ModMed',
+      segment: 'Specialty-first (derm/ortho/ophtho), Clearlake-backed',
+      marketShare: '~$5.3B valuation',
+      color: '#06b6d4',
+      updates: [
+        { date: 'Jun 2026', headline: 'Enterprise rollout at U.S. Orthopaedic Partners — 55+ locations' },
+        { date: 'Apr 2026', headline: 'Acquired Bonsai Health: agentic AI patient engagement — automated reactivation, AI self-scheduling' },
+        { date: 'Apr 2026', headline: 'Selected AWS for "AI-Powered Practice" platform' },
+      ],
+      strategicNote: 'Buying into front-office agentic AI — the same digital-front-door + self-scheduling territory urgent care is chasing.',
+    },
+    {
+      name: 'AdvancedMD',
+      segment: 'Independent practices — twice-yearly AI release cadence',
+      marketShare: 'Independent segment',
+      color: '#a3e635',
+      updates: [
+        { date: 'Jun 2026', headline: 'Summer Release: AI Clinical Assistant for Mobile + automated secondary/tertiary insurance eligibility verification' },
+        { date: 'Feb 2026', headline: 'Winter Release: AI Clinical Assistant GA — ambient listening + AI Action Items auto-generating chart actions' },
+      ],
+      strategicNote: 'Multi-tier eligibility verification is the differentiated RCM automation piece for high-volume walk-in settings.',
+    },
+    {
+      name: 'AI-Native Upstarts',
+      segment: 'Abridge / Ambience / Commure / Elation — beside or inside the EHR',
+      marketShare: 'Capital magnet',
+      color: '#6366f1',
+      updates: [
+        { date: 'May 2026', headline: 'Commure: $70M at $7B post-money; claims 85%+ of RCM work with no human in the loop; embedded in MEDITECH Expanse' },
+        { date: 'Jun 2026', headline: 'Elation Health acquired Aster (AI-native women’s-health EHR); touchless billing creates 72% of eligible claims from note sign-off' },
+        { date: 'Apr 2026', headline: 'Abridge ~$316M Series E extension (single-source) on top of $5.3B valuation; #1 Best in KLAS Ambient Speech' },
+        { date: 'Feb 2026', headline: 'Ambience "Chart Awareness" grounds notes in full longitudinal record; autonomous AutoCDI coding — integrates Epic, Oracle, athena' },
+      ],
+      strategicNote: 'Money is backing platforms that wrap the EHR and expand into coding/RCM/intake. The EHR of record is becoming a system of record wrapped in third-party AI.',
+    },
+  ],
+  marketSignals: [
+    'Ambient documentation is now table stakes and the price is collapsing — athenahealth made it free and native. The moat moved to what happens AFTER the note: autonomous coding, CDI, prior auth, RCM. Assume ambient capture is commoditized within ~12 months.',
+    'The frontier moved from documentation to agents: Epic Agent Factory, Oracle voice-first agentic EHR, ModMed/Bonsai, Commure touchless RCM. For high-volume, thin-margin urgent care, agentic front-door + touchless billing is where ROI concentrates.',
+    'Capital is flooding the AI-native layer, not legacy suites (Abridge ~$5.3B, Commure $7B, Ambience $1.25B, Tebra $250M). Best-of-breed AI will keep out-innovating incumbents’ native stacks near-term — weigh build vs partner accordingly.',
+    'Regulation forces an interoperability step-change in 2026: July 4 FHIR/USCDI v3 deadline, live info-blocking enforcement (up to $1M/violation), payer prior-auth APIs. Whoever operationalizes digital prior auth first wins share.',
+    'Oracle is the wildcard: a ground-up AI-native EHR spanning acute + ambulatory pressures Epic/athena from the top while AI-native upstarts pressure from the bottom. Watch Oracle ambulatory traction and any Veradigm data-asset acquisition.',
+    'Structural gap persists for urgent care: majors aim above the segment (Garden Plot floor = 40+ providers). Small high-throughput walk-in sites are served mainly by urgent-care-specific and small-practice vendors.',
+  ],
 };
 
 export const medicaidCuts = {
