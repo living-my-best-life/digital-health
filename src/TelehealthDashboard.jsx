@@ -9,7 +9,7 @@ import {
   deflectionData, deflectionStats, bigTechTimeline, bigTechStats,
   genVolumeImpact, operationsData, demographicStats, patientInsights,
   consumerCostData, reimbursementData, geographyProjections, strategicAlert,
-  emrCompetitive, onDemandCare,
+  emrCompetitive, onDemandCare, generationalCards,
 } from './data.js';
 
 export default function TelehealthDashboard() {
@@ -605,7 +605,7 @@ export default function TelehealthDashboard() {
             <div className="space-y-6 animate-in fade-in duration-300">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-2">Demographics & Age Patterns</h2>
-                <p className="text-slate-400">Young adults (19-40) dominate telehealth usage. Gen Z/Millennials show 30% telehealth adoption vs just 6% for Baby Boomers.</p>
+                <p className="text-slate-400">Young adults (19-40) dominate telehealth usage. {demographicStats.millennialTelehealthRate} of Millennials have used telehealth vs {demographicStats.boomerTelehealthRate} of Baby Boomers.</p>
               </div>
 
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
@@ -638,21 +638,21 @@ export default function TelehealthDashboard() {
               </div>
 
               <div className="grid grid-cols-3 gap-4">
-                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 border-l-4 border-l-sky-500">
-                  <span className="px-2 py-1 rounded-full bg-sky-500/20 text-sky-400 text-xs font-medium">Gen Z + Millennials</span>
-                  <h4 className="text-lg font-semibold text-white mt-3 mb-2">30% Telehealth</h4>
-                  <p className="text-sm text-slate-400">Most recent healthcare visit was virtual. Expect digital-first experiences.</p>
-                </div>
-                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 border-l-4 border-l-indigo-500">
-                  <span className="px-2 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-xs font-medium">Gen X</span>
-                  <h4 className="text-lg font-semibold text-white mt-3 mb-2">~15% Telehealth</h4>
-                  <p className="text-sm text-slate-400">Selective adoption. Want human backup and clear escalation paths.</p>
-                </div>
-                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 border-l-4 border-l-emerald-500">
-                  <span className="px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-medium">Baby Boomers</span>
-                  <h4 className="text-lg font-semibold text-white mt-3 mb-2">6% Telehealth</h4>
-                  <p className="text-sm text-slate-400">Strong substitution when adopted (74%). Prefer phone and relationships.</p>
-                </div>
+                {generationalCards.map((card, i) => {
+                  const accents = {
+                    sky: { border: 'border-l-sky-500', badge: 'bg-sky-500/20 text-sky-400' },
+                    indigo: { border: 'border-l-indigo-500', badge: 'bg-indigo-500/20 text-indigo-400' },
+                    emerald: { border: 'border-l-emerald-500', badge: 'bg-emerald-500/20 text-emerald-400' },
+                  };
+                  const accent = accents[card.accent] || accents.sky;
+                  return (
+                    <div key={i} className={`bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 border-l-4 ${accent.border}`}>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${accent.badge}`}>{card.generation}</span>
+                      <h4 className="text-lg font-semibold text-white mt-3 mb-2">{card.stat} <span className="text-sm font-normal text-slate-400">{card.statLabel}</span></h4>
+                      <p className="text-sm text-slate-400">{card.note}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}

@@ -225,10 +225,37 @@ export const operationsData = {
 // DEMOGRAPHICS / PATIENT INSIGHTS
 // ============================================================
 export const demographicStats = {
-  genZTelehealthRate: '30%',
-  boomerTelehealthRate: '6%',
-  genZSubstitution: '74%',      // prefer phone and relationships
+  millennialTelehealthRate: '68%',  // have used telehealth (2026 survey; replaces old 30% "most recent visit was virtual" metric)
+  boomerTelehealthRate: '38%',      // have used telehealth (was 6% under the old metric — do not mix metrics)
+  boomerSubstitution: '74%',        // strong substitution when adopted; prefer phone and relationships
+  genZDigitalUCMultiplier: '3x',    // more likely to choose digital-first urgent care
 };
+
+// Generational cards for the Demographics section (data-driven since Jul 2026;
+// accent must be one of: sky, indigo, emerald — mapped to classes in the JSX)
+export const generationalCards = [
+  {
+    generation: 'Millennials',
+    stat: '68%',
+    statLabel: 'have used telehealth',
+    accent: 'sky',
+    note: 'Highest adoption of any generation. Expect digital-first experiences: online booking, price transparency, text-first communication.',
+  },
+  {
+    generation: 'Gen Z',
+    stat: '3x',
+    statLabel: 'more likely to choose digital-first urgent care',
+    accent: 'indigo',
+    note: 'Strong reviews (4.5+) drive +40-50% visit lift. Booking UX and reputation decide where they go.',
+  },
+  {
+    generation: 'Baby Boomers',
+    stat: '38%',
+    statLabel: 'have used telehealth',
+    accent: 'emerald',
+    note: 'Strong substitution when adopted (74%). Prefer phone and relationships — keep human escalation paths visible.',
+  },
+];
 
 export const patientInsights = {
   weeklyHealthQueries: '230M+',     // OpenAI figure, confirmed Jul 2026
