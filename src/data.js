@@ -180,6 +180,7 @@ export const aiDeflectionEvidence = {
     source: 'Ohio State University Wexner Medical Center survey, reported Apr 7, 2026 (US News) — corrected 2026-07-27; previously mis-cited as "JMIR 2026"; a genuine JMIR 2026 paper exists but covers different content',
   },
   countersignal: 'Ohio State Wexner: 51% of Americans already used AI to make an important health decision without consulting a professional first; Wolters Kluwer: 70% believe AI improves health literacy, 42% bring AI-generated info to appointments; Jul 2026 update (Wolters Kluwer/Sprinklr): 57% now say trust decreases when a business relies mainly on AI (up from 47% Oct 2025), trend continues eroding — though Philips Future Health Index 2026 finds patients trust GenAI "almost as much" as their own doctor',
+  safetyFlag: 'Nature Medicine (Feb 23, 2026): ChatGPT Health under-triages 51.6% of emergencies in the first independent safety evaluation since the Jan 7, 2026 launch. This is the most significant clinical safety data point for any consumer health AI in 2026 — reinforces the "clinical oversight required" position and complicates the deflection narrative. Complements (and qualifies) the 300M weekly query adoption signal. (https://www.nature.com/articles/s41591-026-04297-7; added 2026-08-24)',
 };
 
 // ============================================================
@@ -283,6 +284,7 @@ export const demographicStats = {
   genZAIFirstCare: '76%',           // turn to AI before seeking professional care (Aflac 2026; added 2026-08-10)
   millennialsAIFirstCare: '63%',    // turn to AI before seeking professional care (Aflac 2026; added 2026-08-10)
   genZMillennialUCVisitShare: '51%+', // of all urgent care visits despite being only 43% of US population (Charta Health / HCCI 2026; added 2026-08-10)
+  genZUCERShare: '62%',               // Gen Z seeking care from ER or urgent care (up from 51% one year prior, Aflac 2026; also in genZCostBehavior.seeksCareFromUCOrER; added 2026-08-24)
 };
 
 // Generational cards for the Demographics section (data-driven since Jul 2026;
@@ -339,6 +341,7 @@ export const consumerCostData = {
   longWaitTimesBarrier: '55%',      // say long appointment wait times prevented/delayed care in past year
   workScheduleBarrier: '27%',       // cite work-schedule conflicts as an access barrier
   topDomesticWorry: true,           // added 2026-07-27: healthcare displaced the economy as Americans' #1 domestic worry (Gallup)
+  cutBackExpenses: '33%',           // of Americans cut back on everyday expenses to cover healthcare costs (Gallup 2026; added 2026-08-24)
   worriedGreatDeal: '61%',          // worry about healthcare costs "a great deal" (Gallup 2026)
   costSecureByRace: { black: '38%', hispanic: '32%', white: '55%' }, // share who are "Cost Secure," by race (Gallup/West Health 2026)
   costSecureDroppedPastYear: '2.8M', // Americans who dropped out of the "Cost Secure" category in the past year
@@ -378,7 +381,7 @@ export const aiSatisfaction = {
 export const reimbursementData = {
   parityStateCount: 44,             // 44 states + DC have private payer telehealth laws (CHG Healthcare Feb 2026)
   parityTrend: 'strict parity counts diverge: 23 full + 5 with caveats (Manatt Nov 2025) or 24 + PR (CCHP); 44 states + DC + PR + USVI with broader telehealth reimbursement laws (CCHP May 2026); Maryland private-payer law made permanent — repeal date removed (added 2026-08-03)',
-  newLegislation2026: 'TX HB 1052 enacted (eff. Jan 1, 2026) — parity for telemedicine/teledentistry to/from out-of-state sites; NY S354 (parity expansion) passed one chamber, not yet enacted; NJ parity extended through Dec 31, 2027 via S-3947/A-4357 (signed Jun 30, 2026, fixing the prior Jul 1, 2026 sunset); NY base parity law (distinct from pending S354) separately extended through Apr 1, 2028 via A10007; Maryland made its private-payer telehealth coverage law PERMANENT (removed scheduled repeal date, CCHP May 2026; added 2026-08-03); Alaska HB 14 PENDING signature as of Aug 2026 — would require same-rate reimbursement for behavioral health via telehealth (watch for signature); New Mexico broadened Telehealth Act with expanded eligible provider types (2026)',
+  newLegislation2026: 'TX HB 1052 enacted (eff. Jan 1, 2026) — parity for telemedicine/teledentistry to/from out-of-state sites; NY S354 (parity expansion) passed one chamber, not yet enacted; NJ parity extended through Dec 31, 2027 via S-3947/A-4357 (signed Jun 30, 2026, fixing the prior Jul 1, 2026 sunset); NY base parity law (distinct from pending S354) separately extended through Apr 1, 2028 via A10007; Maryland made its private-payer telehealth coverage law PERMANENT (removed scheduled repeal date, CCHP May 2026; added 2026-08-03); Alaska HB 14 PASSED BOTH CHAMBERS, pending Governor signature — requires insurers to reimburse telehealth at same rate as in-person, including behavioral health; geographic pay differential allowed for out-of-state providers (updated 2026-08-24); New Mexico broadened Telehealth Act with expanded eligible provider types (2026)',
   avgReimbursement: '$20',          // less than in-person
   medicareExtended: 'Dec 31, 2027', // VERIFIED: enacted via H.R. 7148 (Consolidated Appropriations Act of 2026), signed Feb 3, 2026
   deaPrescribingExtended: 'Dec 31, 2026', // DEA 4th extension: Schedule II-V telemedicine prescribing, no prior in-person exam
@@ -404,17 +407,18 @@ export const strategicAlert = {
 // NEW DATA — MARCH 2026 RESEARCH UPDATE
 // ============================================================
 export const tefcaStats = {
-  recordsExchanged: '1B+',           // officially confirmed by HHS/ONC June 26, 2026 (was "mid-2026" placeholder), paired with $1.3M federal investment in TEFCA oversight; compounding: ~10M (Jan 2025) → ~500M (Feb 2026) → 1B+ (Jun 2026); 2025 full-year volume 464,291,021 (down slightly from ~474M in 2024)
-  organizations: '14,214',           // kept: newer figures conflict by methodology (Sequoia/RCE Nov 2025: 10,600+ orgs/60,000+ connections; separate Feb 2026 cite: 71,000+ "sites or organizations") — flagged, not swapped in (2026-07-20)
-  connections: '75,000+',
+  recordsExchanged: '1.5B+',          // updated Aug 24, 2026: 1.5 billion+ documents shared since Dec 2023 go-live (Sequoia Project Aug 17, 2026); trajectory: ~10M (Jan 2025) → ~500M (Feb 2026) → 1B+ (Jun 26, 2026) → 1.5B+ (Aug 2026); 2025 full-year volume 464,291,021
+  organizations: '23,000+',          // updated Aug 24, 2026: Sequoia Project official announcement Aug 17, 2026 — up from 14,214; prior conflicting methodology notes superseded by official RCE figure
+  connections: '100,000+',
   qhins: 11,                         // Oracle Health Information Network designated 11th QHIN Nov 2025
-  documentsShared: '1.2B+',          // cumulative documents shared since Dec 2023 go-live (HealthIT.gov)
+  documentsShared: '1.5 billion+',   // updated Aug 24, 2026: cumulative documents shared since Dec 2023 go-live; up from 1.2B+ (Sequoia Project Aug 17, 2026)
   bhitPilots: 9,                     // behavioral health IT pilots
   bhitInvestment: '$20M+',
   ssaJoined: true,                   // Social Security Administration
   ssaExchangePurpose: 'Government benefits determination', // new exchange purpose added spring 2026
   sopUpdate: 'Treatment XP + IAS XP Implementation v3.0 — NOW LIVE as of August 3, 2026 (confirmed this cycle). AHA raised formal privacy objections (Jul 2, 2026); Sequoia RCE proceeded on schedule while retaining provider-verification safeguards. SSA integration via eHealth Exchange QHIN confirmed: 50%+ reduction in disability claims processing time reported. TEFCA connectivity now characterized as "default expectation" not experimental.',
   ssaProcessingImprovement: '50%+',  // reduction in disability claims processing time (SSA via eHealth Exchange QHIN, confirmed Aug 2026; added 2026-08-10)
+  sequoiaFundingIncrease: '15%+',   // ONC awarded Sequoia Project a 15%+ funding increase on Aug 17, 2026 — signals multi-year federal commitment to TEFCA infrastructure; strengthens VCN thesis (Sequoia Project official announcement Aug 17, 2026)
 };
 
 export const fdaAiUpdates = {
@@ -521,12 +525,12 @@ export const onDemandCare = {
       ],
       developments: [
         { date: 'Apr 30, 2026', headline: 'FDA permanently excludes tirzepatide, semaglutide, and liraglutide from the 503B Bulk Drug Substances List — compounding pathway closed for these molecules; smaller 503A pharmacies (e.g., Trimi at $125/mo) still operate' },
-        { date: '2025-26', headline: 'Hims & Hers FY2025: $2.35B revenue (up from $1.5B in 2024), guiding $2.7-2.9B for 2026, 2.5M subscribers (+282K YoY); pivoted to branded-drug dispensing, compounded product only when clinically necessary' },
+        { date: '2025-26', headline: 'Hims & Hers FY2025: $2.35B revenue (up from $1.5B in 2024), 2026 revenue guidance raised to $2.8-3.0B (19-28% growth; raised from initial $2.7-2.9B), 2.5M subscribers (+282K YoY); pivoted to branded-drug dispensing, compounded product only when clinically necessary' },
         { date: 'Jul 2026', headline: 'Medicare GLP-1 Bridge live July 1 — $50/30-day copay for Wegovy/Zepbound through Dec 2027' },
         { date: 'Mar 2026', headline: 'Hims & Hers-Novo Nordisk partnership: branded Wegovy pills/injections + Ozempic on-platform, oral Wegovy from $149/mo; orforglipron (oral GLP-1) PDUFA Apr 10, 2026, expected ~$149/mo via LillyDirect' },
         { date: '2026', headline: 'Direct pricing settled: LillyDirect Zepbound vials $299-449; NovoCare Wegovy $349/mo cash-pay ($149/mo oral promo); Walmart is first retail pickup for LillyDirect' },
         { date: '2026', headline: 'New market baseline (Evolvance/TrimRx, added 2026-07-27): global GLP-1 drug market $68.65B (2026) → $195.01B (2035, 12.3% CAGR), US holds 62.8% of global revenue share; ~2.8M patients enrolled across Hims & Hers/Ro/Amazon Clinic telehealth GLP-1 programs (Q1 2026); GLP-1 telehealth delivery channel specifically: $763.8M (2026) → $3.28B by 2036 (15.7% CAGR, Fact.MR) — added 2026-08-10' },
-        { date: 'Q1 2026', headline: 'Hims & Hers posts $92M net loss as it transitions from compounded to branded FDA-approved GLP-1s; revenue guidance $2.7-2.9B for 2026; Ro launches aggressive price cuts (prepay annual = up to 50% discount, ~$900/yr savings) — GLP-1 telehealth market entering competitive shakeout (added 2026-08-10)' },
+        { date: 'Q1 2026', headline: 'Hims & Hers posts $92M net loss as it transitions from compounded to branded FDA-approved GLP-1s; initial guidance $2.7-2.9B for 2026 subsequently raised to $2.8-3.0B (Fierce Healthcare Q1 2026 earnings); Ro launches aggressive price cuts (prepay annual = up to 50% discount, ~$900/yr savings) — GLP-1 telehealth market entering competitive shakeout (added 2026-08-10; guidance updated 2026-08-24)' },
         { date: 'Feb-Jul 2026', headline: 'Hims & Hers referred to DOJ by HHS General Counsel (Feb 6, 2026); FDA warning letters over compounded GLP-1 marketing; Hims and Ro exited compounded GLP-1s (Mar 2026) and now sell only FDA-approved branded products (Wegovy, Zepbound, oral GLP-1s) — the defining 2026 on-demand-care storyline; pending FDA peptide vote could open the next cash-pay telehealth category (Fortune, Jul 20, 2026)' },
       ],
       strategicNote: 'Build a cash-pay metabolic visit line. Urgent care owns the in-person wrapper telehealth can’t provide: eligibility workup, injection teaching, GI side-effect management — and the walk-in catch for adverse events.',
@@ -614,7 +618,7 @@ export const onDemandCare = {
 // Updated by weekly research → apply pipeline. Keep ≤4 updates per vendor.
 // ============================================================
 export const emrCompetitive = {
-  asOf: 'August 17, 2026',
+  asOf: 'August 24, 2026',
   vendors: [
     {
       name: 'Epic',
@@ -622,10 +626,10 @@ export const emrCompetitive = {
       marketShare: '~19.5% ambulatory · Best in KLAS 75+ MDs (tie)',
       color: '#ef4444',
       updates: [
-        { date: 'late Jul 2026', headline: 'AI Charting went GA for all EHR customers: real-time personalized clinical notes, voice-command formatting, personalization in Art. Inspira Health (NJ) live Jul 27 with 50+ Epic AI-suite tools deployed day one (Healthcare IT News / Becker\'s; added 2026-08-03)' },
-        { date: 'Jul 2026', headline: 'Ambient tool "Chart with Art" expanding to bedside nursing and home care, building on the "Agent Factory" visual AI-agent builder and new foundation models unveiled at HIMSS26; "Factory" agent-build/orchestration environment previewed; Open@Epic returns 2026 as data-sharing accelerates; Epic customers closed 316M care gaps via interoperable data in the past year (vendor-reported)' },
-        { date: 'May 14, 2026', headline: 'KLAS 2026 Acute Care EHR report: Epic holds 43.7% of acute-care hospital share / 56.9% of beds (up from 42.3%), adding 77 hospitals/18,679 beds in 2025 — this is a separate acute/inpatient-hospital metric from Epic\'s ~20% ambulatory share below, resolving the prior "conflicting 37-44%" flag' },
-        { date: 'Mar 2026', headline: 'HIMSS26 "Healthcare Intelligence" push: "Factory" agent-builder preview (health systems configure/deploy their own AI agents), new foundation model CoMET, AI tools branded Art/Penny/Emmie, 150+ AI features in development' },
+        { date: 'Aug 19, 2026 (UGM)', headline: '"Ergo" unveiled — Epic\'s new healthcare intelligence system providing evidence-based, plain-language answers to patient medical questions. Directly competitive with ChatGPT Health on patient-facing AI; EHR-grounded answers vs. general AI differentiate from OpenAI. STAT notes Epic faces succession planning questions and antitrust scrutiny alongside AI push (STAT News / Capital Times, Aug 19, 2026; added 2026-08-24)' },
+        { date: 'Aug 19, 2026 (UGM)', headline: 'Outbreak Alerts — monitors county/state-level diagnosis rates across thousands of ICD-10 codes, filters seasonal baseline before surfacing to clinicians. High relevance for UC demand forecasting and infection control signaling (Modern Healthcare, Aug 19, 2026; added 2026-08-24)' },
+        { date: 'Aug 19, 2026 (UGM)', headline: 'Real-Time Prior Authorization — clinicians immediately see insurer prior auth requirements before starting treatment, letting approval begin sooner. Material for UC throughput and billing efficiency; described as a competitive moat play (Modern Healthcare, Aug 19, 2026; added 2026-08-24)' },
+        { date: 'Aug 19, 2026 (UGM)', headline: 'Penny (revenue cycle AI) at 200+ organizations: reducing coding-related denials by 20%; creating medical necessity denial appeals 23% faster; Agent Factory at 120 out-of-box AI features — ECU Health saved 20 hrs/week on Transfer Center summaries alone; 85% AI adoption among customers confirmed (Epic UGM, Aug 19, 2026; added 2026-08-24)' },
       ],
       strategicNote: 'Building its own agent stack AND renting best-of-breed scribes. Garden Plot floor is 40+ providers — leaves small urgent care unserved. Resolved 2026-07-27: the 37-44% figure is acute/inpatient-hospital share (Epic 43.7% per KLAS 2026), a different market than the ~20% ambulatory baseline below — not a contradiction.',
     },
