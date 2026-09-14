@@ -15,7 +15,7 @@
 // ============================================================
 export const dashboardMeta = {
   lastUpdated: 'September 2026',
-  updateLabel: 'Full Refresh — Big Tech, Telehealth, Policy, EMR & On-Demand Care (research through Aug 31, 2026)',
+  updateLabel: 'Full Refresh — Big Tech, Telehealth, Policy, EMR & On-Demand Care (research through Sep 14, 2026)',
   subtitle: 'AI, Telehealth & Big Tech Market Analysis | Urgent Care Executive Insights',
 };
 
@@ -177,6 +177,7 @@ export const aiDeflectionEvidence = {
     comfortTreatmentDecisions: '47%',
     comfortReassurance: '44%',
     behavioralGap: '34%',                            // of people have made a healthcare decision based on an AI answer despite low stated trust — behavior outpaces stated openness (42%); Healthcare IT News, 2026; added 2026-08-17
+    patientPointConfidenceIndex2026: '84% of patients trust their personal healthcare provider; 74% name their doctor as #1 health info source (up from 45% in 2023 — a 29-point surge); 67% concerned AI will diminish the human relationship in medicine; 49% say in-office digital technology improves their experience. Split: patients warming to digitally augmented in-office care but skeptical of AI-first care. The physician-trust surge suggests consumer health AI may be strengthening attachment to human providers rather than displacing it — premium positioning angle: "AI that supports your provider, not replaces them." (PatientPoint 2026 Patient Confidence Index, HIT Consultant Aug 26, 2026; added 2026-09-14)',
     source: 'Ohio State University Wexner Medical Center survey, reported Apr 7, 2026 (US News) — corrected 2026-07-27; previously mis-cited as "JMIR 2026"; a genuine JMIR 2026 paper exists but covers different content',
   },
   countersignal: 'Ohio State Wexner: 51% of Americans already used AI to make an important health decision without consulting a professional first; Wolters Kluwer: 70% believe AI improves health literacy, 42% bring AI-generated info to appointments; Jul 2026 update (Wolters Kluwer/Sprinklr): 57% now say trust decreases when a business relies mainly on AI (up from 47% Oct 2025), trend continues eroding — though Philips Future Health Index 2026 finds patients trust GenAI "almost as much" as their own doctor',
@@ -209,6 +210,7 @@ export const bigTechTimeline = [
   { date: '2026', company: 'Amazon', product: 'Agentic health AI assistant expanded to all One Medical members and all US consumers via Amazon.com / Amazon app — takes action (books appointments, reads labs, manages meds), accesses state HIE data and patient records before responding. The Amazon health front door is now an AI agent, not a provider.', color: '#0ea5e9' },
   { date: 'Aug 12, 2026', company: 'Google', product: 'AMIE Video — multimodal real-time video consultations powered by Gemini and Project Astra. In a 100-case controlled study (300 consultations with professional patient actors), AMIE Video received clinical evaluator ratings on par with PCPs across cardiopulmonary, abdominal, HEENT, neurological/psychiatric, and musculoskeletal scenarios — simultaneously analyzing voice, video, and visual behavioral cues (distress, breathing changes, movement difficulty). Research-only; no independent deployment cleared. (Google Research Blog, Aug 2026)', color: '#ef4444' },
   { date: 'Late Aug 2026', company: 'Anthropic', product: 'First published outcome benchmarks from Claude for Healthcare deployments: Elation Health (ambulatory EHR) 61% faster chart insights; Carta Healthcare (clinical data abstraction) 66% faster processing; Banner Health 85% of users report meaningful time savings. First hard ROI data since the Jan 11 launch — currently the highest-confidence published enterprise outcome benchmarks from any foundation model in healthcare. Anthropic also opened free / reduced-rate Claude access for scientists and researchers; Azure AI Foundry confirmed as an additional enterprise channel. (Anthropic / IntuitionLabs / TipRanks, Aug 2026; added 2026-08-31)', color: '#f59e0b' },
+  { date: 'Sep 1, 2026', company: 'OpenAI', product: 'ChatGPT × Epic EHR Integration — read-only Epic EHR access inside ChatGPT for Healthcare and ChatGPT for Clinicians. Authorized clinicians can pull patient appointment notes, lab results, medications, and specialist documentation directly into ChatGPT. Read-only (cannot write to records, place orders, send messages, or bypass chart permissions). ChatGPT can surface what changed since the prior visit, flag unresolved referrals, and summarize specialist recommendations. UCSF Health is the named pilot partner. Epic holds records for 325M+ patients — the largest EHR data rail added to any consumer AI product to date. A public-health data plugin launched simultaneously. Structural shift: the #1 AI consumer product now has a read rail into the #1 ambulatory/hospital EHR. (OpenAI official announcement; TechCrunch / Fierce Healthcare / Becker\'s, Sept 1, 2026; added 2026-09-14)', color: '#10b981' },
 ];
 
 export const bigTechStats = {
@@ -224,6 +226,7 @@ export const bigTechStats = {
   chatgptHospitalDesertMsgs: '580K+', // weekly healthcare messages from US "hospital deserts"
   chatgptEnterpriseCustomers: '8',   // AdventHealth, HCA, MSK, Stanford Children's, UCSF, Baylor, Boston Children's, Cedars-Sinai — no net-new since Jan
   chatgptCliniciansProduct: 'Apr 22, 2026', // ChatGPT for Clinicians, free for verified individual physicians/NPs/PAs/pharmacists — middle tier of the Consumer → Clinician → Enterprise stack (date confirmed 2026-08-31)
+  chatgptEpicIntegration: 'Sep 1, 2026 — read-only Epic EHR access inside ChatGPT for Healthcare + ChatGPT for Clinicians; UCSF Health pilot partner; 325M+ patient records accessible; cannot write, place orders, or bypass chart permissions (OpenAI official; TechCrunch / Fierce Healthcare, Sept 2026; added 2026-09-14)',
   adventHealthAdminSavings: '80%',   // AdventHealth (50+ hospitals) admin time savings on OpenAI for Healthcare (Forbes Jul 2026)
   bwellProviders: '2.2M',            // b.well EHR aggregation backbone for ChatGPT Health
   amazonPrimeMembers: '200M+',
@@ -350,6 +353,8 @@ export const consumerCostData = {
   worriedGreatDeal: '61%',          // worry about healthcare costs "a great deal" (Gallup 2026)
   costSecureByRace: { black: '38%', hispanic: '32%', white: '55%' }, // share who are "Cost Secure," by race (Gallup/West Health 2026)
   costSecureDroppedPastYear: '2.8M', // Americans who dropped out of the "Cost Secure" category in the past year
+  employerHealthcareCostIncrease2026: '7.9%', // employer-sponsored healthcare costs rising 7.9% in 2026, highest increase in more than a decade outside COVID fluctuations (Milliman Medical Index 2026; added 2026-09-14)
+  affordabilityTopPriority: '72%',  // of retail healthcare consumers cite affordability as the most important factor (Accenture 2026; added 2026-09-14)
   boomersCanceledCost: '13%',       // canceled an appointment due to cost, vs. 74% of Millennials (comparator); Gen Z 56% (added 2026-08-03)
   millennialsExtraTimeOffWork: '30%', // Millennials who needed extra time off work after delaying care (vs. 3% Boomers) — productivity-cost angle (added 2026-08-03)
   boomersExtraTimeOffWork: '3%',
@@ -390,7 +395,7 @@ export const reimbursementData = {
   avgReimbursement: '$20',          // less than in-person
   medicareExtended: 'Dec 31, 2027', // VERIFIED: enacted via H.R. 7148 (Consolidated Appropriations Act of 2026), signed Feb 3, 2026
   deaPrescribingExtended: 'Dec 31, 2026', // DEA 4th extension: Schedule II-V telemedicine prescribing, no prior in-person exam
-  deaCliffRisk: 'Extension expires Dec 31, 2026 — if Special Registration final rule is not finalized before then, telehealth platforms prescribing Schedule II-V controlled substances face an immediate regulatory cliff Jan 1, 2027; Trump administration intent to finalize rule unclear (Holland & Knight, Jan 2026)',
+  deaCliffRisk: 'Extension expires Dec 31, 2026 — Special Registration final rule entered OIRA (White House Office of Information and Regulatory Affairs) review Aug 25, 2026. OIRA review typically takes 90 days → expected finalization late November 2026, a very tight window before expiration. Three proposed pathways: (1) Telemedicine Prescribing Registration (Schedule III–V), (2) Advanced Telemedicine Prescribing Registration (Schedule II–V, specialized practitioners), (3) Telemedicine Platform Registration. 6,400+ public comments received. If OIRA review slips past Dec 31, platforms prescribing Schedule II–V controlled substances (ADHD, pain, mental health) face an immediate cliff Jan 1, 2027. Watch-Critical — 107-day clock to Dec 31 is now running. (Telehealth.org Aug 25, 2026; McDermott+; updated 2026-09-14)',
 };
 
 export const geographyProjections = {
@@ -424,6 +429,7 @@ export const tefcaStats = {
   sopUpdate: 'Treatment XP + IAS XP Implementation v3.0 — NOW LIVE as of August 3, 2026 (confirmed this cycle). AHA raised formal privacy objections (Jul 2, 2026); Sequoia RCE proceeded on schedule while retaining provider-verification safeguards. SSA integration via eHealth Exchange QHIN confirmed: 50%+ reduction in disability claims processing time reported. TEFCA connectivity now characterized as "default expectation" not experimental.',
   ssaProcessingImprovement: '50%+',  // reduction in disability claims processing time (SSA via eHealth Exchange QHIN, confirmed Aug 2026; added 2026-08-10)
   sequoiaFundingIncrease: '15%+',   // ONC awarded Sequoia Project a 15%+ funding increase on Aug 17, 2026 — signals multi-year federal commitment to TEFCA infrastructure; strengthens VCN thesis (Sequoia Project official announcement Aug 17, 2026)
+  useCases: ['Government benefits determination (SSA disability claims: 50%+ faster processing; April 2026 expansion to 13 hospitals + 374 clinics via Epic TEFCA connection — demonstrates real-world ROI from data exchange, strong VCN analogy; Becker\'s 2026; added 2026-09-14)', 'Emergency care coordination', 'Care gap closure', 'Public health surveillance'],
 };
 
 export const fdaAiUpdates = {
@@ -448,7 +454,7 @@ export const telehealthUtilization = {
   hybridCarePreference: { patients: '82%', providers: '83%' }, // prefer hybrid virtual + in-person model
   physicianTelehealthWeekly2024: '71.4%',   // physicians using telehealth weekly in 2024 — supply-side adoption metric (AHA Market Scan / Axis Intelligence; added 2026-08-31)
   physicianTelehealthPrePandemic: '25.1%',  // pre-pandemic baseline — nearly 3x increase; telehealth is now a normalized delivery modality, not an exception (added 2026-08-31)
-  q2_2026Status: 'FAIR Health Q2 2026 quarterly data not yet published as of Aug 31, 2026 — expected ~Sep 2026',
+  q2_2026Status: 'FAIR Health Q2 2026 quarterly data not yet published as of Sep 14, 2026 — expected ~Sep–Oct 2026; Q1 2026 remains most recent data (5.51% claim lines, +10.1% QoQ, mental health 52.1%)',
   source: 'FAIR Health Quarterly Telehealth Regional Tracker, Jul 2026',
 };
 
@@ -501,6 +507,11 @@ export const digitalHealthFunding = {
   mentalHealthDeals: 14,
   megaRounds100M: 5,                // companies that raised $100M+ in Q1 2026, vs. zero in 2024 or 2025
   signal: 'H1 2026: AI reshaping investor expectations; 19 companies raised 20 megadeals capturing 45% of all capital. Capital-markets reopening for digital health after a multi-year drought.',
+  // Q3 2026 — preliminary signal (Rock Health / Fierce Healthcare; Medium confidence — full Q3 report pending)
+  q3_2026_funding: '$3.5B',
+  q3_2026_deals: 107,
+  q3_2026_ytd: '~$10.9B',          // H1 $7.4B + Q3 $3.5B = ~$10.9B YTD, on pace to match or exceed 2024 full-year ($11.1B)
+  q3_2026_signal: 'Middle market thinning — mega-deals and seed rounds diverging; $10-50M range contracting (Rock Health Q3 weekly / Fierce Healthcare Sept 2026; Medium confidence pending full Q3 report; added 2026-09-14)',
   // M&A activity (separate from VC — added 2026-08-10)
   h1_2026_maAcquisitions: 115,        // corporate acquisitions H1 2026 — busiest strategic consolidation in years (Rock Health)
   q2_2026_maAcquisitions: 71,         // Q2 alone — busiest single M&A quarter since bull market peak late 2021
@@ -629,7 +640,7 @@ export const onDemandCare = {
 // Updated by weekly research → apply pipeline. Keep ≤4 updates per vendor.
 // ============================================================
 export const emrCompetitive = {
-  asOf: 'August 31, 2026',
+  asOf: 'September 14, 2026',
   vendors: [
     {
       name: 'Epic',
@@ -637,10 +648,10 @@ export const emrCompetitive = {
       marketShare: '~19.5% ambulatory · Best in KLAS 75+ MDs (tie)',
       color: '#ef4444',
       updates: [
+        { date: 'Sep 1, 2026', headline: 'OpenAI × Epic EHR integration live — ChatGPT for Healthcare and ChatGPT for Clinicians now have read-only access to Epic patient records (notes, labs, meds, specialist docs). UCSF Health is the named pilot. Epic\'s data moat (325M+ patient records) is now accessible to the top-tier consumer AI. ChatGPT cannot write to the EHR, place orders, or send patient messages — Care Agent\'s write-path and action layer (booking, registration) remains differentiated. Epic\'s Garden Plot / MyChart ecosystem increasingly the hub for third-party AI integrations. (OpenAI / TechCrunch / Fierce Healthcare; cross-reference: bigTechTimeline Sep 1, 2026; added 2026-09-14)' },
         { date: 'Aug 19, 2026 (UGM)', headline: '"Ergo" unveiled — Epic\'s new healthcare intelligence system providing evidence-based, plain-language answers to patient medical questions. Directly competitive with ChatGPT Health on patient-facing AI; EHR-grounded answers vs. general AI differentiate from OpenAI. STAT notes Epic faces succession planning questions and antitrust scrutiny alongside AI push (STAT News / Capital Times, Aug 19, 2026; added 2026-08-24)' },
         { date: 'Aug 19, 2026 (UGM)', headline: 'Outbreak Alerts — monitors county/state-level diagnosis rates across thousands of ICD-10 codes, filters seasonal baseline before surfacing to clinicians. High relevance for UC demand forecasting and infection control signaling (Modern Healthcare, Aug 19, 2026; added 2026-08-24)' },
-        { date: 'Aug 19, 2026 (UGM)', headline: 'Real-Time Prior Authorization — clinicians immediately see insurer prior auth requirements before starting treatment, letting approval begin sooner. Material for UC throughput and billing efficiency; described as a competitive moat play (Modern Healthcare, Aug 19, 2026; added 2026-08-24)' },
-        { date: 'Aug 19, 2026 (UGM)', headline: 'Penny (revenue cycle AI) at 200+ organizations: reducing coding-related denials by 20%; creating medical necessity denial appeals 23% faster; Agent Factory at 120 out-of-box AI features — but broader Agent Factory availability is set for 2027, not 2026 GA (roadmap clarification); Cosmos Curiosity announced — extends the Cosmos data platform into research and clinician-workflow integration, one of the larger strategic UGM announcements; ECU Health saved ~20 hrs/week on Transfer Center summaries alone; 85% AI adoption among customers confirmed (Epic UGM, Aug 19, 2026 — Healthcare IT Today / Distilinfo; added 2026-08-24, updated 2026-08-31)' },
+        { date: 'Aug 19, 2026 (UGM)', headline: 'Real-Time Prior Authorization — clinicians immediately see insurer prior auth requirements before starting treatment, letting approval begin sooner. Material for UC throughput and billing efficiency; described as a competitive moat play. Also: Penny (revenue cycle AI) at 200+ orgs, reducing coding denials 20%, appeals 23% faster; Agent Factory broader availability set for 2027 (not 2026 GA); Cosmos Curiosity announced; ECU Health ~20 hrs/week Transfer Center savings; 85% AI adoption among customers confirmed (Epic UGM / Modern Healthcare / Healthcare IT Today, Aug 19, 2026; updated 2026-09-14)' },
       ],
       strategicNote: 'Building its own agent stack AND renting best-of-breed scribes. Garden Plot floor is 40+ providers — leaves small urgent care unserved. Resolved 2026-07-27: the 37-44% figure is acute/inpatient-hospital share (Epic 43.7% per KLAS 2026), a different market than the ~20% ambulatory baseline below — not a contradiction.',
     },
@@ -663,12 +674,12 @@ export const emrCompetitive = {
       marketShare: 'Wildcard',
       color: '#f59e0b',
       updates: [
+        { date: 'Sep 2026', headline: 'House VA Committee voted 19-0 (bipartisan) to subpoena Oracle Health executives Larry Ellison and Mike Sicilia — Oracle did not send executives to testify, triggering the subpoena. Contract tripled from $10B → $27B despite Oracle\'s promise to Congress to absorb overages. Only 17 of 170 VA medical centers deployed as of the hearing. GAO testimony: VA has implemented only 4 of 18 GAO recommendations since 2020; still no VA estimate for total rollout cost. Congressional framing: "cost nearly tripled." Significantly raises reputational and procurement risk in the commercial market — any commercial buyer now faces a new political/reputational diligence question. (MedCity News / Healthcare Dive / FedScoop / House VA Committee, Sept 2026; added 2026-09-14)' },
         { date: 'Aug 22, 2026', headline: 'VA expanded the Oracle Health EHR Modernization contract by up to $17B in late August — total potential value now up to $27B (from ~$10B), the largest single EHR contract in history. Three Indiana VA medical centers (Fort Wayne, Marion, Richard L. Roudebush) went live Aug 22 — 8 facilities live year-to-date in 2026. Contract extension through 2031 still under negotiation (current deal expires May 2028). Public-sector lock-in is now the defining Oracle Health fact while commercial acute-care erosion continues in parallel (Washington Technology / Nextgov / Healthcare Dive / VA News, Aug 2026; added 2026-08-31)' },
         { date: 'Jul-Oct 2026', headline: 'VA rollout: 13 total VA facilities planned for 2026 (Ohio/Kentucky live, Indiana live Aug 22, Cleveland/Anchorage October 2026); VA seeking contract extension through 2031 (current deal expires May 2028) — largest EHR deployment in US history deepening despite commercial acute-care share losses; Oracle guides double-digit Oracle Health revenue growth FY2027 (Nextgov Aug 2026; Healthcare Dive)' },
-        { date: '2026', headline: 'CORRECTED: ambulatory AI-native EHR has reached general availability (voice-first, agentic AI, semantic AI foundation open to third-party model integration) — acute/hospital-care functionality still in development, targeted for 2026 (was previously misstated as "acute launched")' },
         { date: 'May 14, 2026', headline: 'KLAS 2026: Oracle Health is the lowest-scoring acute care EHR across large, midsize, and small organizations — shed 56 hospitals/14,676 beds in 2025 (third consecutive year as the largest net loser); ~30% of customers say Oracle Health is not in their long-term plans, only 35% "firmly committed" (updated 2026-08-10 to add "lowest-scoring" KLAS language per Safeguard Consulting 2026 Scorecard)' },
       ],
-      strategicNote: 'Only legacy vendor rebuilding AI-native from the ground up rather than bolting AI onto old bones. Key contrast: losing commercial acute-care share for a 3rd consecutive year while simultaneously holding the largest single EHR contract in history — VA potential value now up to $27B after the late-Aug 2026 $17B expansion, with a 2031 extension sought. The narrative has shifted from "struggling challenger" to "dominant government health IT vendor with eroding commercial share" — government lock-in vs. commercial erosion is the defining Oracle tension. Biggest structural swing factor over 6-12 months. (updated 2026-08-31)',
+      strategicNote: 'Only legacy vendor rebuilding AI-native from the ground up rather than bolting AI onto old bones. Key contrast: losing commercial acute-care share for a 3rd consecutive year while simultaneously holding the largest single EHR contract in history — VA potential value now up to $27B. The September 2026 congressional subpoena (19-0, bipartisan) adds political risk as a new dimension alongside commercial share erosion: any commercial buyer now faces a reputational diligence question, and health systems may accelerate Oracle migration decisions. The narrative has shifted from "struggling challenger" to "dominant government health IT vendor with eroding commercial share + emerging political liability." Read Oracle as two businesses: government-locked and commercial-leaking. (updated 2026-09-14)',
     },
     {
       name: 'eClinicalWorks',
@@ -762,7 +773,7 @@ export const emrCompetitive = {
     'The frontier moved from documentation to agents: Epic Agent Factory + CoMET foundation model, Oracle voice-first agentic EHR, ModMed/Bonsai, Commure touchless RCM. For high-volume, thin-margin urgent care, agentic front-door + touchless billing is where ROI concentrates.',
     'Capital is flooding the AI-native layer, not legacy suites (Abridge ~$5.3B+/~$812M raised, Commure $7B, Ambience $1.25B, Tebra $250M). Best-of-breed AI will keep out-innovating incumbents’ native stacks near-term — weigh build vs partner accordingly.',
     'Regulation forces an interoperability step-change in 2026: July 4 FHIR/USCDI v3 deadline, live info-blocking enforcement (up to $1M/violation), payer prior-auth APIs. Whoever operationalizes digital prior auth first wins share.',
-    'Oracle is the wildcard: ambulatory AI-native EHR has now reached general availability (acute/hospital version still in development, targeted for 2026) — pressures Epic/athena from the top while AI-native upstarts pressure from the bottom. Watch Oracle ambulatory traction and any Veradigm data-asset acquisition. Countervailing signal (KLAS 2026): Oracle Health is losing acute-care share for a third straight year (56 hospitals/14,676 beds shed in 2025) with customer commitment softening (~30% not in long-term plans) — the vendor\'s ambulatory rollout performance claims (320 facilities, 78% nurse satisfaction) remain unverified/single-source. New in Aug 2026: the VA contract expansion to a potential $27B (largest EHR contract ever) gives Oracle a public-sector floor that commercial erosion cannot touch — read Oracle as two businesses, government-locked and commercial-leaking, not one. (updated 2026-08-31)',
+    'Oracle is the wildcard: ambulatory AI-native EHR has now reached general availability (acute/hospital version still in development) — pressures Epic/athena from the top while AI-native upstarts pressure from the bottom. Watch Oracle ambulatory traction and any Veradigm data-asset acquisition. Countervailing signal (KLAS 2026): Oracle Health is losing acute-care share for a third straight year (56 hospitals/14,676 beds shed in 2025) with customer commitment softening (~30% not in long-term plans). Sept 2026 NEW: House VA Committee voted 19-0 (bipartisan) to subpoena Larry Ellison and Mike Sicilia; only 17 of 170 VA medical centers deployed despite $27B contract; 4 of 18 GAO recommendations implemented — political risk is now as significant as commercial share erosion. Health systems may accelerate Oracle migration decisions. Read Oracle as two businesses: government-locked and commercial-leaking + politically exposed. (updated 2026-09-14)',
     'athenahealth is the first vendor to disclose hard AI-RCM performance numbers (30% more recovered denial payments, 16% fewer denials) rather than feature announcements — a signal the "documentation → agents/RCM" shift is starting to show measurable ROI, not just roadmap.',
     'Structural gap persists for urgent care: majors aim above the segment (Garden Plot floor = 40+ providers). Small high-throughput walk-in sites are served mainly by urgent-care-specific and small-practice vendors.',
     'KLAS 2026: overall EHR purchase decisions are DOWN 40% vs 2024 (near 50% vs 2023) as health systems redirect capital to AI and operational-efficiency tools; global purchasing at a near five-year low (447 hospitals / 81,261 beds purchased across all vendors). MEDITECH: 84% legacy retention onto Expanse. Capital is moving from EHR refresh to AI layer — the EHR consolidation window is closing, the AI-on-top opportunity is opening. (HIT Consultant May 14 + Jul 8, 2026; added 2026-08-03)',
