@@ -15,7 +15,7 @@
 // ============================================================
 export const dashboardMeta = {
   lastUpdated: 'October 2026',
-  updateLabel: 'Full Refresh — Big Tech, Telehealth, Policy, EMR & On-Demand Care (research through October 5, 2026)',
+  updateLabel: 'Full Refresh — Big Tech, Telehealth, Policy, EMR & On-Demand Care (research through October 12, 2026)',
   subtitle: 'AI, Telehealth & Big Tech Market Analysis | Urgent Care Executive Insights',
 };
 
@@ -170,6 +170,7 @@ export const aiDeflectionEvidence = {
     symptomAI: { patients: '13,917', setting: 'Fitbit app, Jun 2025-Apr 2026', aiAccuracy: '73%', physicianAccuracy: '60%', activeVsPassiveGain: '+27%', note: 'Largest real-world eval of conversational diagnostic AI to date; Google Research / TechTimes Jul 24, 2026; Medium confidence on 73%/60% framing until paper directly reviewed' }, // BT-17 (added 2026-08-03)
     infermedicaVsMTS: { patients: '18,000', complicationsBefore: '10.25%', complicationsAfter: '4.42%', satisfactionBefore: '7.0', satisfactionAfter: '9.0', mortalityOR: '0.39', study: 'Infermedica AI-supported triage vs Manchester Triage System, 2026; Medium confidence pending direct journal read', counterpoint: 'Mount Sinai (2026) published research identifying blind spots in AI medical triage' }, // added 2026-08-03
     o1ERTriage: { accuracy: '67%', vsPhysicians: ['55%', '50%'], study: 'Harvard/BIDMC, published Science, May 2026', note: 'Exact-or-close ER triage diagnosis rate vs two attending physicians; highest-profile peer-reviewed head-to-head AI vs physician result in 2026' }, // added 2026-08-10
+    amieUrgentCare: { patients: 100, setting: 'BIDMC urgent care, pre-visit consultations up to 5 days before visit', caseAccuracy: '90%', top3Accuracy: '75%', source: 'BizPacReview/The Lancet-adjacent, Oct 9, 2026', note: 'First published study of AMIE specifically in an urgent care pre-visit setting — distinct from prior inpatient/ED studies; Google framing: "support tool for doctors," not autonomous care; positions AMIE for the pre-visit intake market; added 2026-10-12' }, // BT-11 urgent care extension
   },
   trustDecline: {
     opennessThen: '52%', opennessNow: '42%',        // openness to AI in healthcare, since 2024
@@ -199,6 +200,7 @@ export const aiDeflectionEvidence = {
   countersignal: 'Ohio State Wexner: 51% of Americans already used AI to make an important health decision without consulting a professional first; Wolters Kluwer: 70% believe AI improves health literacy, 42% bring AI-generated info to appointments; Jul 2026 update (Wolters Kluwer/Sprinklr): 57% now say trust decreases when a business relies mainly on AI (up from 47% Oct 2025), trend continues eroding — though Philips Future Health Index 2026 finds patients trust GenAI "almost as much" as their own doctor',
   safetyFlag: 'Nature Medicine (Feb 23, 2026): ChatGPT Health under-triages 51.6% of emergencies in the first independent safety evaluation since the Jan 7, 2026 launch. This is the most significant clinical safety data point for any consumer health AI in 2026 — reinforces the "clinical oversight required" position and complicates the deflection narrative. Complements (and qualifies) the 300M weekly query adoption signal. (https://www.nature.com/articles/s41591-026-04297-7; added 2026-08-24)',
   safetyFlag2: 'Nature Medicine (May 2026) structured stress test — 60 clinician-authored vignettes across 21 clinical domains, 16 factorial conditions, 960 total responses: 48% emergency undertriage (e.g., diabetic ketoacidosis routed to "see a doctor within 24-48 hours" instead of the ED); 35% non-urgent overtriage; inverted-U performance pattern with the worst failures at clinical extremes; suicide/crisis safety alerts fired inconsistently (triggered on lower-risk conversations, absent when users described specific self-harm plans). Second independent peer-reviewed safety study in three months confirming the Feb 2026 finding — same structural failure mode. (added 2026-08-31)',
+  safetyFlag3: 'AI chatbot harm tracking gap (Nature commentary + ECRI, Oct 2026): AI health chatbots are not FDA-regulated medical devices — no mandatory adverse-event reporting, and physicians cannot access chatbot conversation logs when patients make care decisions based on AI advice. ECRI named misuse of AI chatbots in healthcare the #1 tech hazard for 2026. UK research: 5M+ Brits estimated harmed by wrong AI chatbot health advice; ~25% of AI users say incorrect chatbot advice caused real harm. Structural accountability gap that could drive near-term FDA or FTC action — and is a competitive opening for provider-embedded AI (like Care Agent) that operates within a clinical workflow with clear accountability. (Nature, Oct 2026; MedicalXpress Oct 10, 2026; ECRI/PSQH 2026; added 2026-10-12)',
 };
 
 // ============================================================
@@ -234,6 +236,8 @@ export const bigTechTimeline = [
   { date: 'Oct 2026', company: 'Amazon', product: 'Health Insights (beta) — Amazon One Medical launched a beta feature helping patients understand routine bloodwork results with personalized analysis and evidence-based recommendations. Extends from healthcare navigation into clinical data interpretation. (About Amazon press release; added 2026-10-05)', color: '#0ea5e9' },
   { date: 'Oct 2026', company: 'Anthropic', product: 'Federal clinical AI moonshot + global clinical search — Forbes (Oct 3, 2026) reports Anthropic "partnered to give free AI-powered clinical search to doctors in roughly 100 countries and joined a federal clinical AI moonshot" within a two-week window. Marks expansion from enterprise health system deployments into government infrastructure and global clinical access. PwC deployed Claude across its business including AI-native life sciences agents — positions Claude inside a major healthcare consulting channel. Anthropic "The Briefing: Healthcare and Life Sciences" virtual event live on anthropic.com. (Forbes Oct 3, 2026 — Jesse Pines article; PwC press release; Medium confidence on moonshot specifics — watch for formal Anthropic announcement; added 2026-10-05)', color: '#f59e0b' },
   { date: 'Sep 1, 2026', company: 'OpenAI', product: 'ChatGPT × Epic EHR Integration — read-only Epic EHR access inside ChatGPT for Healthcare and ChatGPT for Clinicians. Authorized clinicians can pull patient appointment notes, lab results, medications, and specialist documentation directly into ChatGPT. Read-only (cannot write to records, place orders, send messages, or bypass chart permissions). ChatGPT can surface what changed since the prior visit, flag unresolved referrals, and summarize specialist recommendations. UCSF Health is the named pilot partner. Epic holds records for 325M+ patients — the largest EHR data rail added to any consumer AI product to date. A public-health data plugin launched simultaneously. Structural shift: the #1 AI consumer product now has a read rail into the #1 ambulatory/hospital EHR. (OpenAI official announcement; TechCrunch / Fierce Healthcare / Becker\'s, Sept 1, 2026; added 2026-09-14)', color: '#10b981' },
+  { date: 'Oct 9, 2026', company: 'Google', product: 'AMIE Urgent Care Study published (BIDMC, The Lancet-adjacent) — 100 patients consulted AMIE chatbot up to 5 days before urgent care visits; 90% correct dx in differential, 75% top-3 accuracy. First published real-world study of AMIE in an urgent care pre-visit setting, distinct from prior inpatient/ED studies. Google framing: "support tool for doctors," not autonomous care — explicitly targeting the pre-visit intake market. Trade coverage: "AI might be coming to an urgent care clinic near you." (BizPacReview / The Lancet-adjacent, Oct 9, 2026; added 2026-10-12)', color: '#ef4444' },
+  { date: 'Oct 2026', company: 'Anthropic', product: 'Claude Mythos (Glasswing) — Epic Systems used Anthropic\'s Claude Mythos model to scan for vulnerabilities in patient health record systems. Epic identified material security issues and paused product development to implement patches. First documented case of Claude being deployed as a security auditing tool within an EHR vendor\'s development process — and the first reported instance of AI-assisted security audit causing a healthcare IT vendor to halt roadmap work. New use case for LLMs in healthcare: internal security verification before external regulators require it. (DigitalHealthNews Oct 2026; Healthcare IT News Oct 8, 2026; added 2026-10-12)', color: '#f59e0b' },
 ];
 
 export const bigTechStats = {
@@ -264,6 +268,7 @@ export const bigTechStats = {
   googleRctStatus: 'IRB-approved, enrolling', // Included Health nationwide RCT — upgraded from "announced" (Mar 17, 2026); no enrollment #s or results yet
   amieCaseAccuracy: '90%',           // AMIE cases with correct dx in differential (Google Research blog, Mar 2026)
   amieTop3Accuracy: '75%',           // AMIE top-3 diagnostic accuracy
+  amieUrgentCareStudy: 'Oct 9, 2026 — BIDMC, 100 patients, pre-visit urgent care consultations; 90% correct dx in differential / 75% top-3 accuracy; first real-world urgent care deployment context; Google framing: pre-visit intake support tool, not autonomous care (BizPacReview / The Lancet-adjacent, Oct 9, 2026; added 2026-10-12)',
   openaiLabcorpReview: '260+ MDs / 700K+ responses', // physician review program backing OpenAI x Labcorp lab-result interpretation (May 2026)
   epicAiAdoption: '85%',             // of Epic customers using AI (HIMSS 2026)
   epicArtMonthlyUses: '16M',         // Art documentation uses/month, ~3x growth
@@ -387,6 +392,7 @@ export const consumerCostData = {
   delayedCareRange2026: '28-44%',   // range across methodologies: 28% (KFF 12-month) to 44% (Imagine360 broader timeframe) — cite source when using either end (added 2026-10-05)
   genZDelayedCare2026: '45%',       // Gen Z delayed care due to cost (Imagine360 2026; added 2026-10-05)
   millennialDelayedCare2026: '42%', // Millennials delayed care due to cost; vs. Gen X 30%, Boomers 29% (Imagine360 2026; added 2026-10-05)
+  enrolleesCostIncrease2026: '60%', // of enrollees saw healthcare costs increase over past year; half reduced discretionary spending; one-third struggled with other bills; one-quarter cut retirement contributions (EBRI Consumer Engagement Survey 2026; added 2026-10-12)
   boomersCanceledCost: '13%',       // canceled an appointment due to cost, vs. 74% of Millennials (comparator); Gen Z 56% (added 2026-08-03)
   millennialsExtraTimeOffWork: '30%', // Millennials who needed extra time off work after delaying care (vs. 3% Boomers) — productivity-cost angle (added 2026-08-03)
   boomersExtraTimeOffWork: '3%',
@@ -427,7 +433,7 @@ export const reimbursementData = {
   avgReimbursement: '$20',          // less than in-person
   medicareExtended: 'Dec 31, 2027', // VERIFIED: enacted via H.R. 7148 (Consolidated Appropriations Act of 2026), signed Feb 3, 2026
   deaPrescribingExtended: 'Dec 31, 2026', // DEA 4th extension: Schedule II-V telemedicine prescribing, no prior in-person exam
-  deaCliffRisk: 'Extension expires Dec 31, 2026 — Special Registration final rule entered OIRA (White House Office of Information and Regulatory Affairs) review Aug 25, 2026. OIRA review typically takes 90 days → expected finalization late November 2026, a very tight window before expiration. Three proposed pathways: (1) Telemedicine Prescribing Registration (Schedule III–V), (2) Advanced Telemedicine Prescribing Registration (Schedule II–V, specialized practitioners), (3) Telemedicine Platform Registration. 6,400+ public comments received. If OIRA review slips past Dec 31, platforms prescribing Schedule II–V controlled substances (ADHD, pain, mental health) face an immediate cliff Jan 1, 2027. Watch-Critical — 107-day clock to Dec 31 is now running. (Telehealth.org Aug 25, 2026; McDermott+; updated 2026-09-14)',
+  deaCliffRisk: 'Extension expires Dec 31, 2026 — Special Registration final rule entered OIRA (White House Office of Information and Regulatory Affairs) review Aug 25, 2026. OIRA review typically takes 90 days → expected finalization late November 2026, a very tight window before expiration. Three proposed pathways: (1) Telemedicine Prescribing Registration (Schedule III–V), (2) Advanced Telemedicine Prescribing Registration (Schedule II–V, specialized practitioners), (3) Telemedicine Platform Registration. 6,400+ public comments received. If OIRA review slips past Dec 31, platforms prescribing Schedule II–V controlled substances (ADHD, pain, mental health) face an immediate cliff Jan 1, 2027. Watch-Critical — 107-day clock (from Aug 25) is now at ~84 days remaining as of Oct 8, 2026; rule still under OIRA review with the Dec 31 cliff approaching. (Telehealth.org Aug 25, 2026; WCHSB Oct 8, 2026; McDermott+; updated 2026-10-12)',
 };
 
 export const geographyProjections = {
@@ -462,6 +468,7 @@ export const tefcaStats = {
   ssaProcessingImprovement: '50%+',  // reduction in disability claims processing time (SSA via eHealth Exchange QHIN, confirmed Aug 2026; added 2026-08-10)
   sequoiaFundingIncrease: '15%+',   // ONC awarded Sequoia Project a 15%+ funding increase on Aug 17, 2026 — signals multi-year federal commitment to TEFCA infrastructure; strengthens VCN thesis (Sequoia Project official announcement Aug 17, 2026)
   uscdiv3Required: 'Effective Jan 1, 2026 — all TEFCA data created/captured/sent must conform to USCDI v3 standard (Sequoia Project / Becker\'s Hospital Review "What\'s new with TEFCA in 2026"; added 2026-09-28)',
+  securityConcern2026: '60+ health systems sent a letter to The Sequoia Project requesting tighter vetting of TEFCA network members, citing concerns that some entities are connecting with malicious intent — a data security concern that could slow adoption pace and affect the VCN data infrastructure narrative. (TechTarget/Becker\'s Oct 2026; Medium confidence — referenced in trade press; added 2026-10-12)',
   useCases: ['Government benefits determination (SSA disability claims: 50%+ faster processing; April 2026 expansion to 13 hospitals + 374 clinics via Epic TEFCA connection — demonstrates real-world ROI from data exchange, strong VCN analogy; Becker\'s 2026; added 2026-09-14)', 'Emergency care coordination', 'Care gap closure', 'Public health surveillance'],
 };
 
@@ -472,6 +479,7 @@ export const fdaAiUpdates = {
   approvedAiDevices: '1,524',        // re-verified 2026-07-27: 1,451 (end of 2025) → 1,524 (late Mar 2026), per IntuitionLabs FDA AI Device Tracker
   cdsMultipleOptionsRelaxed: true,   // FDA relaxed Clinical Decision Support "multiple options" requirement
   tempoPilot: 'CMS-partnered, Dec 2025 — early patient access to FDA-authorized digital chronic-disease devices; Dexcom confirmed as first participant; CMS companion ACCESS model first cohort launched Jul 2026',
+  genAiDiscussionPaper: 'Aug 18, 2026: FDA published a formal Discussion Paper on Generative AI Medical Devices (docket FDA-2026-N-7874) via the Digital Health Center of Excellence. Public comment period closed Oct 19, 2026. Key provisions: competency-style premarket assessment; continuous post-market telemetry requirements; deterministic fallback mechanisms; strict training data traceability. Foundation models and agentic AI systems explicitly called out as requiring targeted policy design. Most significant FDA AI regulatory signal since Jan 2026 deregulatory guidance for low-risk AI/wearables. Final guidance expected Q1 2027. (FDA/VeroScribe/DailyAIWorld; added 2026-10-12)',
 };
 
 // FAIR Health telehealth utilization tracker (quarterly feed — added Jul 2026)
@@ -504,7 +512,7 @@ export const retailHealthRetreat = {
   cvsClosingLocations: true,         // MinuteClinic closing dozens of locations in Southern California and New England in 2026; broader retail health clinic experiment (CVS/Walgreens/Walmart) characterized as "struggling" by academic analysis (CVS Form 8-K Q2 2026; Fierce Healthcare; updated 2026-09-28)
   walgreensClosing: '1,200 total closures planned (500+ completed by early 2026, additional 600+ in 2026) — cumulative vs. annual counts conflict across sources; reconcile against Walgreens investor materials before citing a single-year figure (Medium confidence; updated 2026-08-17; prior entry "<100 in 2026" referred to Sycamore-era 2026-specific closures after 500+ already completed)',
   walmartExited: true,
-  cvsPivot: 'MinuteClinic Primary Care live in CT (in addition to TX/GA), now at 60%+ of CVS locations',
+  cvsPivot: 'MinuteClinic Primary Care live in CT (in addition to TX/GA), now at 65%+ of eligible locations across 17 states + DC (MinuteClinic press release Oct 12, 2026; updated 2026-10-12)',
   cvsAetnaInNetwork: 'In-network Aetna primary care via MinuteClinic — Houston, San Antonio, Greater Atlanta (2026)',
   cvsVirtualGLP1Visit: '$49',        // virtual GLP-1 visit; GLP-1 support scaled to 9,000+ CVS Pharmacy locations
   cvsMedicareGlp1Bridge: '$50/month', // Medicare GLP-1 Bridge Program began Jul 1, 2026 (through Dec 2027)
@@ -551,6 +559,7 @@ export const digitalHealthFunding = {
   q3_2026_ytd: '~$10.9B',          // H1 $7.4B + Q3 $3.5B = ~$10.9B YTD, on pace to match or exceed 2024 full-year ($11.1B)
   q3_2026_status: 'confirmed',       // Rock Health Q3 2026 report published; upgraded from Medium to High confidence (Fierce Healthcare / Rock Health Q3 2026; updated 2026-09-28)
   q3_2026_signal: 'Middle market thinning — mega-deals ($100M+) and seed rounds diverging while $10-50M range contracts; on pace to match or exceed 2024 full-year ($11.1B); fewer Series A/B companies available as strategic partners or acquisition targets (Rock Health Q3 2026 published; Fierce Healthcare; High confidence; updated 2026-09-28)',
+  q3_2026_unlabeledRoundsNote: 'Increasing proportion of unlabeled/undisclosed rounds means the $3.5B/107-deal Q3 figure may undercount actual activity — real investment volume likely higher (Rock Health Q3 2026; added 2026-10-12)',
   // M&A activity (separate from VC — added 2026-08-10)
   h1_2026_maAcquisitions: 115,        // corporate acquisitions H1 2026 — busiest strategic consolidation in years (Rock Health)
   q2_2026_maAcquisitions: 71,         // Q2 alone — busiest single M&A quarter since bull market peak late 2021
@@ -570,9 +579,13 @@ export const virtualCarePlatforms = {
     operatingFreeCashFlow2025: '$166.9M',
     q1_2026Revenue: '$613.8M',
     q1_2026Change: '-2% YoY',
+    q2_2026Revenue: '$606.9M',
+    q3_2026GuidanceRange: '$569–$609M (midpoint ~$589M)',
+    q3_2026EbitdaGuidance: '$62–$74M',
+    q3_2026NetLossGuidance: '($0.30)–($0.20) per share',
     fy2026Guidance: '$2.36–2.45B',
     fy2026NetLossGuidance: '$181M–$136M net loss',
-    note: 'Full-year 2025 essentially flat; FY2026 guidance $2.36–2.45B confirms continued flat revenue — pure-play telehealth model under structural pressure from Big Tech entrants (SEC filing Q1 2026; added 2026-10-05)',
+    note: 'Sequential revenue decline: Q1 $613.8M → Q2 $606.9M → Q3 guidance midpoint ~$589M. FY2026 guidance $2.36–2.45B unchanged — pure-play telehealth model under structural pressure from Big Tech entrants (247 Wall St / Fierce Healthcare; Q3 guidance added 2026-10-12)',
   },
   amwell: {
     cumulativeVisits: '39.5M',
@@ -608,7 +621,7 @@ export const onDemandCare = {
       developments: [
         { date: 'Sep 2026', headline: 'Hims & Hers strategic pivot — announced collaboration with Novo Nordisk offering FDA-approved branded GLP-1 medications while scaling back compounded semaglutide to "limited scale" only. Follows: (1) FDA 30 warning letters to telehealth companies including Hims & Hers for misleading compounded GLP-1 marketing (Mar 3, 2026); (2) Trump administration additional warning letters (Sep 2026); (3) FDA 503B proposal to permanently exclude semaglutide/tirzepatide/liraglutide (comment period closed Jun 29, 2026 — final rule pending). Q1 2026: $608M revenue (up 4% YoY), ~2.6M subscribers (up 9% YoY). The compounding channel is being legally closed — structural shift from cash-pay telehealth GLP-1 model. (SEC 8-K; investors.hims.com; FDA.gov; Orrick; added 2026-09-28)' },
         { date: 'Jun 2, 2026', headline: 'Hims & Hers completes Eucalyptus acquisition ($1.15B; announced Feb 19). Adds 775K customers, ~$450M annualized revenue, and international presence (Australia/UK/NZ) — first consumer telehealth platform with genuine international scale; now self-described as "world\'s largest consumer health platform." Combined 2026 guidance $2.8-3.0B excludes Eucalyptus; long-term 2030 targets $6.5B revenue / $1.3B Adj. EBITDA signal a platform play, not a GLP-1 thesis. Offers brand-name GLP-1s via Novo partnership plus compounded semaglutide only where clinically appropriate (SEC 8-K, investors.hims.com; added 2026-08-31)' },
-        { date: 'Apr 30, 2026', headline: 'FDA permanently excludes tirzepatide, semaglutide, and liraglutide from the 503B Bulk Drug Substances List — compounding pathway closed for these molecules; smaller 503A pharmacies (e.g., Trimi at $125/mo) still operate' },
+        { date: 'Apr 30, 2026 (rule pending)', headline: 'FDA proposed permanent exclusion of tirzepatide, semaglutide, and liraglutide from the 503B Bulk Drug Substances List. Public comment period was extended 30 days to July 30, 2026 (from original June 30 deadline). Final Federal Register rule still pending as of October 2026 — not yet published. Smaller 503A pharmacies (patient-specific compounding, e.g., Trimi at $125/mo) remain operative under different authority. Note: the Apr 1 practical exclusion means bulk compounding is already effectively prohibited; the Apr 30 rulemaking is the formal codification step. (PharmaLive / Pharmaceutical Commerce 2026; updated 2026-10-12)' },
         { date: '2025-26', headline: 'Hims & Hers FY2025: $2.35B revenue (up from $1.5B in 2024), 2026 revenue guidance raised to $2.8-3.0B (19-28% growth; raised from initial $2.7-2.9B), 2.5M subscribers (+282K YoY); pivoted to branded-drug dispensing, compounded product only when clinically necessary' },
         { date: 'Jul 2026', headline: 'Medicare GLP-1 Bridge live July 1 — $50/30-day copay for Wegovy/Zepbound through Dec 2027' },
         { date: 'Mar 2026', headline: 'Hims & Hers-Novo Nordisk partnership: branded Wegovy pills/injections + Ozempic on-platform, oral Wegovy from $149/mo; orforglipron (oral GLP-1) PDUFA Apr 10, 2026, expected ~$149/mo via LillyDirect' },
@@ -706,7 +719,7 @@ export const onDemandCare = {
 // Updated by weekly research → apply pipeline. Keep ≤4 updates per vendor.
 // ============================================================
 export const emrCompetitive = {
-  asOf: 'October 5, 2026',
+  asOf: 'October 12, 2026',
   vendors: [
     {
       name: 'Epic',
@@ -717,7 +730,7 @@ export const emrCompetitive = {
       updates: [
         { date: 'Sep 1, 2026', headline: 'OpenAI × Epic EHR integration live — ChatGPT for Healthcare and ChatGPT for Clinicians now have read-only access to Epic patient records (notes, labs, meds, specialist docs). UCSF Health is the named pilot. Epic\'s data moat (325M+ patient records) is now accessible to the top-tier consumer AI. ChatGPT cannot write to the EHR, place orders, or send patient messages — Care Agent\'s write-path and action layer (booking, registration) remains differentiated. Epic\'s Garden Plot / MyChart ecosystem increasingly the hub for third-party AI integrations. (OpenAI / TechCrunch / Fierce Healthcare; cross-reference: bigTechTimeline Sep 1, 2026; added 2026-09-14)' },
         { date: 'Aug 19, 2026 (UGM)', headline: '"Ergo" + "Ergo Visit" unveiled — Epic\'s healthcare intelligence system providing evidence-based answers to patient medical questions. Ergo Visit specifically targets the ambulatory/outpatient context: finds patterns across the patient\'s full record and guides clinicians through outpatient visits — directly addressing the ambulatory care workflow. 1.4 million clinicians are now assisted by AI monthly via Epic\'s EHR (distinct from the 16M monthly Insights uses — this is a clinician headcount). Directly competitive with ChatGPT Health on patient-facing AI; EHR-grounded answers vs. general AI differentiate from OpenAI. (STAT News / Healthcare Dive / Capital Times, Aug 19, 2026; updated 2026-10-05)' },
-        { date: 'Aug 19, 2026 (UGM)', headline: 'Outbreak Alerts — monitors county/state-level diagnosis rates across thousands of ICD-10 codes, filters seasonal baseline before surfacing to clinicians. High relevance for UC demand forecasting and infection control signaling (Modern Healthcare, Aug 19, 2026; added 2026-08-24)' },
+        { date: 'Oct 2026', headline: 'UPMC wave 2: 15 hospitals + hundreds of ambulatory practices go live on Epic (second wave consolidating nine legacy EHRs). Freeman Health System migrates from athenahealth/Meditech to Epic across four hospitals (Oct 24, 2026) — EHR consolidation continues accelerating in large health systems, Epic primary beneficiary. Glasswing security audit: Epic used Anthropic Claude Mythos to identify patient-record security vulnerabilities, then paused product development to apply patches — first reported instance of AI-assisted security audit causing an EHR vendor to halt roadmap work. (Health IT Answers Oct 8, 2026; Becker\'s 2026; DigitalHealthNews Oct 2026; added 2026-10-12)' },
         { date: 'Aug–Sep 2026', headline: 'Real-Time Prior Authorization + Emmie + Agent Factory Fall Wave — clinicians see prior auth requirements before starting treatment (billing efficiency moat). Three named AI product lines confirmed: Art (clinicians), Penny (back office), Emmie (patients — new UGM announcement). Penny at 200+ orgs: 20% fewer coding denials, 23% faster appeals. Next Agent Factory early adopter wave begins fall 2026; broader availability 2027. Cosmos Curiosity + ECU Health ~20 hrs/week Transfer Center savings confirmed. 85% AI adoption. EHR purchase decisions near 5-yr low (KLAS 2026: -40% vs. 2024). (Epic UGM Aug 19, 2026 / HIT Consultant; updated 2026-09-28)' },
       ],
       strategicNote: 'Building its own agent stack AND renting best-of-breed scribes. Garden Plot floor is 40+ providers — leaves small urgent care unserved. Resolved 2026-07-27: the 37-44% figure is acute/inpatient-hospital share (Epic 43.7% per KLAS 2026), a different market than the ~20% ambulatory baseline below — not a contradiction.',
